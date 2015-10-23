@@ -175,7 +175,7 @@ Calculator.prototype = {
 	},
 
 	getValue: function() {
-		var result = 0;
+		var result = this.calcData.base;
 		var i;
 		for (i = 0; i < this.controls.length; ++i) {
 			result |= this.controls[i].getValue();
