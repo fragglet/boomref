@@ -1,7 +1,10 @@
 <html>
-<head>
-<title>Hyperlinkable version of boomref.txt</title>
-</head>
+  <head>
+    <title>Hyperlinkable version of boomref.txt</title>
+    <script language="javascript" src="boomdata.js"></script>
+    <script language="javascript" src="boomcalc.js"></script>
+    <link rel="stylesheet" type="text/css" href="boomcalc.css">
+  </head>
 <body>
 <pre>
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
@@ -1864,6 +1867,11 @@ exists, no change occurs. Note that in DOOM II v1.9, no model meant
 an illegal sector type was generated.
 
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedFloors);
+</script>
+<pre>
 ------------------------------------------------------------------
 generalized floors (8192 types)
 
@@ -1909,6 +1917,11 @@ Notes:
    two sided linedef around the tagged sector. If it doesn't exist
    no change occurs.
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedCeilings);
+</script>
+<pre>
 ------------------------------------------------------------------
 generalized ceilings (8192 types)
 
@@ -1954,6 +1967,11 @@ Notes:
    two sided linedef around the tagged sector. If it doesn't exist
    no change occurs.
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedDoors);
+</script>
+<pre>
 ------------------------------------------------------------------
 generalized doors (1024 types)
 
@@ -1985,6 +2003,11 @@ Notes:
 2) The precise delay timings in gametics are: 35/150/300/1050
 3) Speed is 2/4/8/16 units per tic
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedLockedDoors);
+</script>
+<pre>
 ------------------------------------------------------------------
 generalized locked doors (1024 types)
 

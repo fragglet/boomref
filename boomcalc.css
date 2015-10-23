@@ -53,3 +53,19 @@
 	text-align: right;
 }
 
+.calc-float {
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 20em;
+	background-color: lightblue;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.calc-float img {
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+

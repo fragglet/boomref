@@ -88,6 +88,7 @@ Control.prototype = {
 
 function Calculator(calcData) {
 	this.calcData = calcData;
+	this.calcWindow = null;
 	this.createControls();
 }
 
@@ -195,12 +196,53 @@ Calculator.prototype = {
 	},
 
 	close: function() {
-		document.body.removeChild(this.calcWindow);
+		if (this.calcWindow != null) {
+			document.body.removeChild(this.calcWindow);
+			this.calcWindow = null;
+		}
 	},
 }
 
+var currentCalculator = null;
+
 function openCalculator(calcData) {
-	var calc = new Calculator(calcData);
-	calc.open();
+	if (currentCalculator != null) {
+		currentCalculator.close();
+	}
+	currentCalculator = new Calculator(calcData);
+	currentCalculator.open();
+}
+
+function generateCalculatorFloat(divId, calcData) {
+	var result = document.getElementById(divId);
+	result.classList.add("calc-float");
+
+	var icon = document.createElement("img");
+	icon.setAttribute("src", "boomcalc.png");
+	result.appendChild(icon);
+
+	var link = document.createElement("a");
+	link.setAttribute("href", "javascript:true;");
+	link.onclick = function() {
+		openCalculator(calcData);
+	}
+	link.appendChild(document.createTextNode("Click here"));
+	result.appendChild(link);
+
+	var text = (
+		" to open an interactive calculator for calculating " +
+		calcData.name.toLowerCase() + "."
+	)
+	result.appendChild(document.createTextNode(text))
+	return result;
+}
+
+var numCalculatorFloats = 0;
+
+function insertCalculatorFloat(calcData) {
+	divId = "calc-float-" + numCalculatorFloats;
+	++numCalculatorFloats;
+	document.write("<div id='" + divId + "'></div>")
+	generateCalculatorFloat(divId, calcData);
 }
 
