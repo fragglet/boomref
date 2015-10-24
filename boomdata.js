@@ -48,6 +48,7 @@ generalizedFloors = {
 		},
 		{
 			"name": "Target",
+			"url": "#sec2.1",
 			"mask": 0x0380,
 			"values": [
 				"HnF (Highest neighbor floor)",
@@ -101,6 +102,7 @@ generalizedCeilings = {
 		{
 			"name": "Target",
 			"mask": 0x0380,
+			"url": "#sec3.1",
 			"values": [
 				"HnC (Highest neighbor ceiling)",
 				"LnC (Lowest neighbor ceiling)",
@@ -132,6 +134,7 @@ generalizedCeilings = {
 commonDoorKindPart = {
 	"name": "Kind",
 	"mask": "0x0060",
+	"url": "#sec1.1",
 	"values": [
 		"Open, delay, close",
 		"Open",
@@ -218,10 +221,11 @@ generalizedLifts = {
 		{
 			"name": "Target",
 			"mask": 0x0300,
+			"url": "#sec4.1",
 			"values": [
-				"LnF (Lowest nearest floor)",
-				"NnF (Next nearest floor)",
-				"LnC (Lowest nearest ceiling)",
+				"LnF (Lowest neighbor floor)",
+				"NnF (Next neighbor floor)",
+				"LnC (Lowest neighbor ceiling)",
 				"LnF <-> HnF (perpetual lift)",
 			],
 		},

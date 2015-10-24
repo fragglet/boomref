@@ -49,7 +49,14 @@ Control.prototype = {
 
 		var labelCell = document.createElement("th");
 		labelCell.classList.add("label");
-		labelCell.appendChild(document.createTextNode(this.part.name));
+		var label = document.createTextNode(this.part.name);
+		if ("url" in this.part) {
+			var link = document.createElement("a");
+			link.setAttribute("href", this.part.url);
+			link.appendChild(label);
+			label = link;
+		}
+		labelCell.appendChild(label);
 		result.appendChild(labelCell);
 
 		var controlCell = document.createElement("td");
