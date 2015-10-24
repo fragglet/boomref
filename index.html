@@ -1380,17 +1380,17 @@ Extended Property Transfer Linedefs
 -------------------------------------------------------------------
 #     Class  Trig Description
 
-213   Ext --   Set Tagged Floor Lighting to Lighting on 1st Sidedef's Sector
+<a name="ld213" href="#ld213">213</a>   Ext --   Set Tagged Floor Lighting to Lighting on 1st Sidedef's Sector
 
 Used to give the floor of a sector a different light level from the
 remainder of the sector. For example bright lava in a dark room.
 
-261   Ext --   Set Tagged Ceiling Lighting to Lighting on 1st Sidedef's Sector
+<a name="ld261" href="#ld261">261</a>   Ext --   Set Tagged Ceiling Lighting to Lighting on 1st Sidedef's Sector
 
 Used to give the ceiling of a sector a different light level from the
 remainder of the sector.
 
-260   Ext --   Make Tagged Lines (or this line if tag==0) Translucent
+<a name="ld260" href="#ld260">260</a>   Ext --   Make Tagged Lines (or this line if tag==0) Translucent
 
 Used to make 2s normal textures translucent. If tag==0, then this linedef's
 normal texture is made translucent if it's 2s, and the default translucency
@@ -1407,7 +1407,7 @@ valid texture name, and will be displayed as such on this linedef.
   insertVideoFloat("type 242 property transfer", "1m40s");
 </script>
 <pre>
-242   Ext --   Set Tagged Lighting, Flats Heights to 1st Sidedef's Sector,
+<a name="ld242" href="#ld242">242</a>   Ext --   Set Tagged Lighting, Flats Heights to 1st Sidedef's Sector,
                and set <a href="http://doomwiki.org/wiki/COLORMAP">colormap</a> based on sidedef textures.
 
 This allows the tagged sector to have two levels -- an actual floor and 
@@ -1541,13 +1541,13 @@ Ceiling bleeding may occur if required upper textures are not used.
 The length of the linedef with type 223 controls the amount of friction
 experienced by the player in the tagged sector, when in contact with the
 floor. Lengths less than 100 are sticker than normal, lengths greater than
-100 are slipperier than normal. The effect is only present in the tagged
+<a name="ld100" href="#ld100">100</a> are slipperier than normal. The effect is only present in the tagged
 sector when its friction enable bit (<a href="#sec15-bit8">bit 8</a>) in the sector type is set.
 This allows the flat to be changed in conjunction with turning the effect
 on or off thru texture/type changes.
 
-271   Ext --   Transfer sky texture to tagged sectors 
-271   Ext --   Transfer sky texture to tagged sectors, flipped
+<a name="ld271" href="#ld271">271</a>   Ext --   Transfer sky texture to tagged sectors 
+<a name="ld272" href="#ld272">272</a>   Ext --   Transfer sky texture to tagged sectors, flipped
 
 These linedefs transfer wall textures to skies. F_SKY1 must still be used as
 the floor or ceiling texture in the sectors for which sky is desired, but the
@@ -1673,35 +1673,35 @@ remains constant during gameplay. However, these effects can be combined
 with, and/or canceled by, other scrollers.
 
 
-250    -- Scroll Tagged Ceiling
+<a name="ld250" href="#ld250">250</a>    -- Scroll Tagged Ceiling
 
 The ceiling of the tagged sector scrolls in the direction of the linedef
 trigger, 1 unit per frame for each 32 units of linedef trigger length.
 Objects attached to the ceiling do not move.
 
 
-251    -- Scroll Tagged Floor                                 
+<a name="ld251" href="#ld251">251</a>    -- Scroll Tagged Floor                                 
 
 The floor of the tagged sector scrolls in the direction of the linedef
 trigger, 1 unit per frame for each 32 units of linedef trigger length.
 Objects resting on the floor do not move.
 
 
-252    -- Carry Objects on Tagged Floor                       
+<a name="ld252" href="#ld252">252</a>    -- Carry Objects on Tagged Floor                       
 
 Objects on the floor of the tagged sector move in the direction of the
 linedef trigger, 1 unit per frame for each 32 units of linedef trigger
 length. The floor itself does not scroll.
 
 
-253    -- Scroll Tagged Floor, Carry Objects
+<a name="ld253" href="#ld253">253</a>    -- Scroll Tagged Floor, Carry Objects
 
 Both the floor of the tagged sector and objects resting on that floor
 move in the direction of the linedef trigger, 1 unit per frame for each
 32 units of linedef trigger length.
 
 
-254    -- Scroll Tagged Wall, Same as Floor/Ceiling
+<a name="ld254" href="#ld254">254</a>    -- Scroll Tagged Wall, Same as Floor/Ceiling
 
 Walls with the same tag as the linedef trigger scroll at the same
 rate as a floor or ceiling controlled by one of 250-253, allowing
@@ -1723,7 +1723,7 @@ For convenience three simpler static scroll functions are provided
 for when you just need a wall to scroll and don't need to control its
 rate and don't want to bother with proportionality.
 
-255    -- Scroll Wall Using Sidedef Offsets                   
+<a name="ld255" href="#ld255">255</a>    -- Scroll Wall Using Sidedef Offsets                   
 
 For simplicity, a static scroller is provided that scrolls the first
 <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of a linedef, based on its x- and y- offsets. No tag is used.
@@ -1731,12 +1731,12 @@ The x offset controls the rate of horizontal scrolling, 1 unit per
 frame per x offset, and the y offset controls the rate of vertical
 scrolling, 1 unit per frame per y offset.
 
-48     -- Animated wall, Scrolls Left                         
+<a name="ld48" href="#ld48">48</a>     -- Animated wall, Scrolls Left                         
 
 A linedef with this type scrolls its first sidedef left at a
 constant rate of 1 unit per frame.
 
-85     -- Animated wall, Scrolls Right
+<a name="ld85" href="#ld85">85</a>     -- Animated wall, Scrolls Right
 
 A linedef with this type scrolls its first sidedef right at a
 constant rate of 1 unit per frame.
@@ -1771,7 +1771,7 @@ each unit the floor or ceiling of the controlling sector moves. If it
 is 64 long, they move 2 units per unit of relative floor/ceiling motion
 in the controlling sector and so on.
 
-245    -- Scroll Tagged Ceiling w.r.t. 1st Side's Sector 
+<a name="ld245" href="#ld245">245</a>    -- Scroll Tagged Ceiling w.r.t. 1st Side's Sector 
 
 The tagged sector's ceiling texture scrolls in the direction of the
 scrolling trigger line, when the sector on the trigger's first sidedef
@@ -1779,7 +1779,7 @@ changes height. The amount moved is the height change times the trigger
 length, divided by 32. Objects attached to the ceiling do not move.
 
 
-246    -- Scroll Tagged Floor w.r.t. 1st Side's Sector        
+<a name="ld246" href="#ld246">246</a>    -- Scroll Tagged Floor w.r.t. 1st Side's Sector        
 
 The tagged sector's floor texture scrolls in the direction of the 
 scrolling trigger line when the sector on the trigger's first sidedef
@@ -1787,7 +1787,7 @@ changes height. The amount moved is the height change times the trigger
 length, divided by 32. Objects on the floor do not move.
 
 
-247    -- Push Objects on Tagged Floor wrt 1st Side's Sector  
+<a name="ld247" href="#ld247">247</a>    -- Push Objects on Tagged Floor wrt 1st Side's Sector  
 
 Objects on the tagged sector's floor move in the direction of the
 scrolling trigger line when the sector on the trigger's first sidedef 
@@ -1795,7 +1795,7 @@ changes height. The amount moved is the height change times the trigger
 length, divided by 32.
 
 
-248    -- Push Objects &amp; Tagged Floor wrt 1st Side's Sector   
+<a name="ld248" href="#ld248">248</a>    -- Push Objects &amp; Tagged Floor wrt 1st Side's Sector   
 
 The tagged sector's floor texture, and objects on the floor, move in 
 the direction of the scrolling trigger line when the sector on the
@@ -1803,7 +1803,7 @@ trigger's first sidedef changes height.  The amount moved is the height
 change times the trigger length, divided by 32. 
 
 
-249    -- Scroll Tagged Wall w.r.t 1st Side's Sector          
+<a name="ld249" href="#ld249">249</a>    -- Scroll Tagged Wall w.r.t 1st Side's Sector          
 
 Walls with the same tag as the linedef trigger scroll at the same
 rate as a floor or ceiling controlled by one of 245-249, allowing
@@ -1839,7 +1839,7 @@ would then need to be set up to cancel the static scroller's
 effect when the controlling sector's height changes.
 
 
-214    -- Accel Tagged Ceiling w.r.t. 1st Side's Sector
+<a name="ld214" href="#ld214">214</a>    -- Accel Tagged Ceiling w.r.t. 1st Side's Sector
 
 The tagged sector's ceiling's rate of scroll changes in the direction
 of the trigger linedef (use vector addition if already scrolling) by 
@@ -1850,7 +1850,7 @@ long, and the ceiling of the controlling sector moves 1 unit, the
 tagged ceiling will start scrolling at 1 unit per frame.
 
 
-215    -- Accel Tagged Floor w.r.t. 1st Side's Sector         
+<a name="ld215" href="#ld215">215</a>    -- Accel Tagged Floor w.r.t. 1st Side's Sector         
 
 The tagged sector's floor's rate of scroll changes in the direction of
 the trigger linedef (use vector addition if already scrolling) by the
@@ -1861,7 +1861,7 @@ and the ceiling of the controlling sector moves 1 unit, the tagged
 floor will start scrolling at 1 unit per frame.
 
 
-216    -- Accel Objects on Tagged Floor wrt 1st Side's Sector 
+<a name="ld216" href="#ld216">216</a>    -- Accel Objects on Tagged Floor wrt 1st Side's Sector 
 
 Objects on the tagged sector's floor's rate of motion changes in the
 direction of the trigger linedef (use vector addition if already
@@ -1872,7 +1872,7 @@ is 32 long, and the ceiling of the controlling sector moves 1 unit,
 the objects on the tagged floor will start moving at 1 unit per frame.
 
 
-217    -- Accel Objects&amp;Tagged Floor wrt 1st Side's Sector    
+<a name="ld217" href="#ld217">217</a>    -- Accel Objects&amp;Tagged Floor wrt 1st Side's Sector    
 
 The tagged sector's floor, and objects on it, change its rate of 
 motion in the direction of the trigger linedef (use vector addition
@@ -1884,7 +1884,7 @@ sector moves 1 unit, the objects and the tagged floor will start moving
 at 1 unit per frame.
 
 
-218    -- Accel Tagged Wall w.r.t 1st Side's Sector           
+<a name="ld218" href="#ld218">218</a>    -- Accel Tagged Wall w.r.t 1st Side's Sector           
 
 Walls with the same tag as the linedef trigger increase their 
 scroll rate in sync with a floor or ceiling controlled by one of
