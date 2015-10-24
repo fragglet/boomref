@@ -80,7 +80,7 @@ generalizedFloors = {
 
 generalizedCeilings = {
 	"name": "Generalized ceilings",
-	"base": 0x6000,
+	"base": 0x4000,
 	"parts": [
 		commonTriggerPart,
 		commonSpeedPart,
