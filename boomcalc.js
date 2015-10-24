@@ -155,7 +155,7 @@ Calculator.prototype = {
 		this.onChange();
 
 		// Change to result box updates controls
-		result.onchange = function() {
+		function boxChanged() {
 			var value = parseInt(result.value);
 			if (calc.isValidValue(value)) {
 				calc.setValue(value);
@@ -164,6 +164,9 @@ Calculator.prototype = {
 				result.classList.add("invalid-result");
 			}
 		}
+		result.onchange = boxChanged;
+		result.oninput = boxChanged;
+
 		return result;
 	},
 
