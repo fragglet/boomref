@@ -216,9 +216,8 @@ function openCalculator(calcData) {
 	currentCalculator.open();
 }
 
-function generateCalculatorFloat(divId, calcData) {
-	var result = document.getElementById(divId);
-	result.classList.add("calc-float");
+function generateCalculatorFloat(result, calcData) {
+	result.classList.add("side-float", "calc-float");
 
 	var icon = document.createElement("img");
 	icon.setAttribute("src", "boomcalc.png");
@@ -240,12 +239,38 @@ function generateCalculatorFloat(divId, calcData) {
 	return result;
 }
 
-var numCalculatorFloats = 0;
+function generateVideoFloat(result, thing, timestamp) {
+	result.classList.add("side-float", "video-float");
+
+	var icon = document.createElement("img");
+	icon.setAttribute("src", "youtube.png");
+	result.appendChild(icon);
+
+	var link = document.createElement("a");
+	var url = "https://www.youtube.com/watch?v=d7WBQH5-1ps#t=" + timestamp;
+	link.setAttribute("href", url);
+	link.appendChild(document.createTextNode("Click here"));
+	result.appendChild(link);
+
+	var text = " to open a video demonstration of " + thing + ".";
+	result.appendChild(document.createTextNode(text))
+	return result;
+}
+
+var numSideFloats = 0;
+
+function insertSideFloat() {
+	divId = "calc-float-" + numSideFloats;
+	++numSideFloats;
+	document.write("<div id='" + divId + "'></div>")
+	return document.getElementById(divId);
+}
 
 function insertCalculatorFloat(calcData) {
-	divId = "calc-float-" + numCalculatorFloats;
-	++numCalculatorFloats;
-	document.write("<div id='" + divId + "'></div>")
-	generateCalculatorFloat(divId, calcData);
+	generateCalculatorFloat(insertSideFloat(), calcData);
+}
+
+function insertVideoFloat(thing, timestamp) {
+	generateVideoFloat(insertSideFloat(), thing, timestamp);
 }
 
