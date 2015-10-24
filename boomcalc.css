@@ -38,8 +38,8 @@
 	padding: 10px;
 }
 
-.calculator .result {
-	width: 100%;
+.calculator .result > input {
+	width: 80%;
 	background-color: black;
 	color: white;
 	font-size: large;
@@ -49,7 +49,18 @@
 	padding: 0.5em;
 }
 
-.calculator .invalid-result {
+.calculator .hex-control {
+	float: right;
+	width: 3em;
+	border-top: 1px solid darkgrey;
+	border-left: 1px solid darkgrey;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+	padding: 10px;
+	text-align: center;
+}
+
+.calculator input.invalid-result {
 	color: red;
 }
 

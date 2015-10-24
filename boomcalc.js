@@ -143,29 +143,55 @@ Calculator.prototype = {
 	},
 
 	createResultBox: function() {
-		var result = document.createElement("input");
+		var result = document.createElement("div");
 		result.classList.add("result");
-		result.setAttribute("type", "text");
+
+		var hexDiv = document.createElement("div");
+		hexDiv.classList.add("hex-control");
+		result.appendChild(hexDiv);
+
+		var hexControl = document.createElement("input");
+		hexControl.setAttribute("type", "checkbox");
+		hexDiv.appendChild(hexControl);
+		hexDiv.appendChild(document.createTextNode("Hex"));
+
+		var inputBox = document.createElement("input");
+		inputBox.setAttribute("type", "text");
+		result.appendChild(inputBox);
 
 		var calc = this;
 		// Change to controls updates result box
-		this.onChange = function() {
-			result.value = calc.getValue().toString();
+		function valueChanged() {
+			var value;
+			if (hexControl.checked) {
+				value = "0x" + calc.getValue().toString(16);
+			} else {
+				value = calc.getValue().toString();
+			}
+			inputBox.value = value;
 		}
-		this.onChange();
+		this.onChange = valueChanged;
+		hexControl.onchange = valueChanged;
+		valueChanged();
 
 		// Change to result box updates controls
 		function boxChanged() {
-			var value = parseInt(result.value);
+			var boxValue = inputBox.value;
+			var value;
+			if (boxValue.startsWith("0x")) {
+				value = parseInt(boxValue.substring(2), 16);
+			} else {
+				value = parseInt(boxValue);
+			}
 			if (calc.isValidValue(value)) {
 				calc.setValue(value);
-				result.classList.remove("invalid-result");
+				inputBox.classList.remove("invalid-result");
 			} else {
-				result.classList.add("invalid-result");
+				inputBox.classList.add("invalid-result");
 			}
 		}
-		result.onchange = boxChanged;
-		result.oninput = boxChanged;
+		inputBox.onchange = boxChanged;
+		inputBox.oninput = boxChanged;
 
 		return result;
 	},
