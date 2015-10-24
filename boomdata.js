@@ -193,4 +193,139 @@ generalizedLockedDoors = {
 	],
 }
 
+commonMonsterPart = {
+	"name": "Monsters can trigger",
+	"mask": 0x0020,
+}
+
+generalizedLifts = {
+        "name": "Generalized lifts (elevators)",
+        "base": 0x3400,
+        "parts": [
+                commonTriggerPart,
+                commonSpeedPart,
+		commonMonsterPart,
+		{
+			"name": "Delay",
+			"mask": 0x00c0,
+			"values": [
+				"1 second",
+				"4 seconds",
+				"9 seconds",
+				"30 seconds",
+			],
+		},
+		{
+			"name": "Target",
+			"mask": 0x0300,
+			"values": [
+				"LnF (Lowest nearest floor)",
+				"NnF (Next nearest floor)",
+				"LnC (Lowest nearest ceiling)",
+				"LnF <-> HnF (perpetual lift)",
+			],
+		},
+        ],
+}
+
+generalizedStairs = {
+	"name": "Generalized stairs",
+	"base": 0x3000,
+	"parts": [
+		commonTriggerPart,
+		commonSpeedPart,
+		commonMonsterPart,
+		{
+			"name": "Step size",
+			"mask": 0x00c0,
+			"values": [
+				"4 units",
+				"8 units",
+				"16 units",
+				"24 units",
+			],
+		},
+		{
+			"name": "Direction",
+			"mask": 0x0100,
+			"values": [
+				"Down", "Up",
+			],
+		},
+		{
+			"name": "Ignore texture",
+			"mask": 0x0200,
+		},
+	],
+}
+
+generalizedCrushers = {
+	"name": "Generalized crushing ceilings",
+	"base": 0x2f80,
+	"parts": [
+		commonTriggerPart,
+		commonSpeedPart,
+		commonMonsterPart,
+		{
+			"name": "Silent",
+			"mask": 0x0040,
+		},
+	],
+}
+
+generalizedSectors = {
+	"name": "Generalized sector types",
+	"base": 0,
+	"parts": [
+		{
+			"name": "Lighting",
+			"mask": 0x001f,
+			// Lighting values are sparse to keep backward
+			// compatibility with original sector types:
+			"values": [
+				"Normal lighting",
+				"random off",
+				"blink 0.5 second",
+				"blink 1.0 second",
+				"-10/20% health AND light blink 0.5 second",
+				null,
+				null,
+				null,
+				"oscillates",
+				null,
+				null,
+				null,
+				"blink 0.5 second, synchronized",
+				"blink 1.0 second, synchronized",
+				null,
+				null,
+				null,
+				"flickers on and off randomly",
+			],
+		},
+		{
+			"name": "Damage",
+			"mask": 0x0060,
+			"values": [
+				"No damage",
+				"5 units per second",
+				"10 units per second",
+				"20 units per second",
+			],
+		},
+		{
+			"name": "Secret",
+			"mask": 0x0080,
+		},
+		{
+			"name": "Friction effects",
+			"mask": 0x0100,
+		},
+		{
+			"name": "Wind effects",
+			"mask": 0x0200,
+		},
+
+	],
+}
 

@@ -10,8 +10,11 @@ Control.prototype = {
 
 		var i;
 		for (i = 0; i < this.part.values.length; ++i) {
-			var opt = document.createElement("option");
 			var value = this.part.values[i];
+			if (value == null) {
+				continue;
+			}
+			var opt = document.createElement("option");
 			opt.appendChild(document.createTextNode(value));
 			opt.setAttribute("value", i.toString());
 			result.appendChild(opt);

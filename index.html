@@ -256,6 +256,11 @@ for each parameter, any combination of parameters is allowed:
 Slow and Fast represent the same speeds as slow and fast regular doors. Normal
 is twice as fast as slow, Fast is twice normal, Turbo is twice Fast.
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedDoors);
+</script>
+<pre>
 Generalized Door Types
 ---------------------------------------------------------------
 #        Class   Trig   Lock   Speed    Wait  Monst    Function
@@ -266,6 +271,11 @@ Generalized Door Types
                  G1/GR         Turbo    30s            Close, Wait, Then Open
                         
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedLockedDoors);
+</script>
+<pre>
 Generalized Locked Door Types
 ---------------------------------------------------------------
 #        Class   Trig   Lock   Speed    Wait  Monst    Function
@@ -507,6 +517,11 @@ Slow and Fast represent the same speeds as slow and fast regular
 floors. Normal is twice as fast as slow, Fast is twice normal, Turbo
 is twice Fast.
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedFloors);
+</script>
+<pre>
 Generalized Floor Types
 ---------------------------------------------------------------------------
 #      Class   Trig   Dir Spd   *Chg *Mdl Mon Crsh  Target
@@ -678,6 +693,11 @@ Regular and Extended Ceiling Types
 202   Ext     WR     Dn  Slow  None  --  No  No   Highest Neighbor Floor
 200   Ext     W1     Dn  Slow  None  --  No  No   Highest Neighbor Floor
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedCeilings);
+</script>
+<pre>
 Generalized Ceiling Types
 ---------------------------------------------------------------------------
 #      Class   Trig   Dir Spd   *Chg *Mdl Mon Crsh  Target
@@ -846,6 +866,11 @@ Regular and Extended Platform Types
 211   Ext    SR     --  Inst None --  No  Ceiling (toggle)
 212   Ext    WR     --  Inst None --  No  Ceiling (toggle)
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedLifts);
+</script>
+<pre>
 Generalized Lift Types
 ---------------------------------------------------------------------------
 #      Class   Trig   Dly Spd    Mon  Target
@@ -922,6 +947,11 @@ Regular and Extended Crusher Types
 74,   Reg    WR     ---- --  --     Stop
 57,   Reg    W1     ---- --  --     Stop
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedCrushers);
+</script>
+<pre>
 Generalized Crusher Types
 ---------------------------------------------------------------------------
 #      Class   Trig   Spd    Mon  Silent
@@ -1010,6 +1040,11 @@ Regular and Extended Stairs Types
 257   Ext    WR    Up  Fast  16   No     No
 100   Reg    W1    Up  Fast  16   No     No
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedStairs);
+</script>
+<pre>
 Generalized Stairs Types
 ---------------------------------------------------------------------------
 #      Class   Trig   Dir Spd     Step  Ignore Mon
@@ -2069,6 +2104,11 @@ Notes:
    requires 3 keys if sk=ck is 1, and 6 keys if sk=ck is 0.
 4) Speed is 2/4/8/16 units per tic
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedLifts);
+</script>
+<pre>
 -------------------------------------------------------------------
 generalized lifts (1024 types)
 
@@ -2103,6 +2143,11 @@ Notes:
    locks out all other actions on the sector, even if it is stopped with
    the non-extended stop perpetual floor function.
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedStairs);
+</script>
+<pre>
 -------------------------------------------------------------------
 generalized stairs (1024 types)
 
@@ -2135,6 +2180,11 @@ Notes:
 3) A retriggerable stairs builds up and down alternately on each
    trigger.
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedCrushers);
+</script>
+<pre>
 -------------------------------------------------------------------
 generalized crushers (128 types)
 
@@ -2211,6 +2261,11 @@ was the case with DOOM. The sector type will merely be ignored.
 <a href="#sec15">Section 15. Generalized sector types</a>
 ####################################
 
+</pre>
+<script language="javascript">
+  insertCalculatorFloat(generalizedSectors);
+</script>
+<pre>
 BOOM also provides generalized sector types, based on bit fields,
 that allow several sector type properties to be independently
 specified for a sector. Texture change linedefs can be used to switch
