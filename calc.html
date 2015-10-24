@@ -5,10 +5,24 @@
     <link rel="stylesheet" type="text/css" href="boomcalc.css">
   </head>
 <body>
-  <div id="calc">
-  </div>
-  <script language="javascript">
-    openCalculator(generalizedFloors);
-  </script>
+  <h1> JavaScript Boom calculator </h1>
+  This is a JavaScript reimplementation of <tt>TRIGCALC.EXE</tt>, the
+  command-line utility included with the
+  <a href="http://www.doomworld.com/idgames/themes/TeamTNT/boom/utilsrc">
+  Boom utilities</a> for calculating
+  <a href="index.html#sec13">generalized linedef types</a> and sector
+  types.
+  <p>
+  There are actually several different calculators for the different types:
+  <ul>
+    <li> <a href="javascript:openCalculator(generalizedFloors);">Generalized floors calculator</a>
+    <li> <a href="javascript:openCalculator(generalizedCeilings);">Generalized ceilings calculator</a>
+    <li> <a href="javascript:openCalculator(generalizedDoors);">Generalized doors calculator</a>
+    <li> <a href="javascript:openCalculator(generalizedLockedDoors);">Generalized locked doors calculator</a>
+    <li> <a href="javascript:openCalculator(generalizedLifts);">Generalized lifts calculator</a>
+    <li> <a href="javascript:openCalculator(generalizedStairs);">Generalized stairs calculator</a>
+    <li> <a href="javascript:openCalculator(generalizedCrushers);">Generalized crushing ceilings calculator</a>
+    <li> <a href="javascript:openCalculator(generalizedSectors);">Generalized sector type calculator</a>
+  </ul>
 </html>
 

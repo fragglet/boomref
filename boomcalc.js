@@ -52,7 +52,11 @@ Control.prototype = {
 		var label = document.createTextNode(this.part.name);
 		if ("url" in this.part) {
 			var link = document.createElement("a");
-			link.setAttribute("href", this.part.url);
+			var url = this.part.url;
+			if (url.startsWith("#")) {
+				url = "index.html" + url;
+			}
+			link.setAttribute("href", url);
 			link.appendChild(label);
 			label = link;
 		}
