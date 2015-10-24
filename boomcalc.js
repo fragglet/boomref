@@ -268,12 +268,25 @@ function openCalculator(calcData) {
 	currentCalculator.open();
 }
 
-function generateCalculatorFloat(result, calcData) {
-	result.classList.add("side-float", "calc-float");
+var numSideFloats = 0;
+
+function insertBasicFloat(floatClass, iconPath) {
+	var divId = "calc-float-" + numSideFloats;
+	++numSideFloats;
+
+	document.write("<div id='" + divId + "'></div>")
+	var result = document.getElementById(divId);
+	result.classList.add("side-float", floatClass);
 
 	var icon = document.createElement("img");
-	icon.setAttribute("src", "boomcalc.png");
+	icon.setAttribute("src", iconPath);
 	result.appendChild(icon);
+
+	return result;
+}
+
+function insertCalculatorFloat(calcData) {
+	var result = insertBasicFloat("calc-float", "boomcalc.png");
 
 	var link = document.createElement("a");
 	link.setAttribute("href", "javascript:true;");
@@ -291,12 +304,8 @@ function generateCalculatorFloat(result, calcData) {
 	return result;
 }
 
-function generateVideoFloat(result, thing, timestamp) {
-	result.classList.add("side-float", "video-float");
-
-	var icon = document.createElement("img");
-	icon.setAttribute("src", "youtube.png");
-	result.appendChild(icon);
+function insertVideoFloat(thing, timestamp) {
+	var result = insertBasicFloat("video-float", "youtube.png");
 
 	var link = document.createElement("a");
 	var url = "https://www.youtube.com/watch?v=d7WBQH5-1ps#t=" + timestamp;
@@ -309,20 +318,10 @@ function generateVideoFloat(result, thing, timestamp) {
 	return result;
 }
 
-var numSideFloats = 0;
+function insertInfoFloat(text) {
+	var result = insertBasicFloat("info-float", "infoicon.png");
 
-function insertSideFloat() {
-	divId = "calc-float-" + numSideFloats;
-	++numSideFloats;
-	document.write("<div id='" + divId + "'></div>")
-	return document.getElementById(divId);
-}
-
-function insertCalculatorFloat(calcData) {
-	generateCalculatorFloat(insertSideFloat(), calcData);
-}
-
-function insertVideoFloat(thing, timestamp) {
-	generateVideoFloat(insertSideFloat(), thing, timestamp);
+	result.appendChild(document.createTextNode(text));
+	return result;
 }
 
