@@ -49,7 +49,7 @@ creating Boom-compatible WAD files.
 <a href="#sec0">Section 0. Terminology</a>
 #######################
 
-In BOOM actions are caused to happen in the game thru linedef types.
+In <a href="http://doomwiki.org/wiki/Boom">BOOM</a> actions are caused to happen in the game thru <a href="http://doomwiki.org/wiki/Linedef_type">linedef types</a>.
 BOOM has three kinds of linedef types:
 
 Regular     - the linedef types that were already in DOOM II v1.9
@@ -57,13 +57,13 @@ Regular     - the linedef types that were already in DOOM II v1.9
 Extended    - linedef types not in DOOM II v1.9 but less than 8192 
               in value
 
-Generalized - linedef types over 8192 in value that contain bit
-              fields that independently control the actions of the sector
+<a href="#sec13">Generalized</a> - linedef types over 8192 in value that contain bit
+              fields that independently control the actions of the <a href="http://doomwiki.org/wiki/Sector">sector</a>
               affected.
 
-A linedef with non-zero linedef type is called a linedef trigger. A
+A <a href="http://doomwiki.org/wiki/Linedef">linedef</a> with non-zero linedef type is called a linedef trigger. A
 linedef trigger is always activated in one of three ways - pushing on
-the first sidedef of the linedef, walking over the linedef, or
+the first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of the linedef, walking over the linedef, or
 shooting the linedef with an impact weapon (fists, chainsaw, pistol,
 shotgun, double barreled, or chaingun). 
 
@@ -104,7 +104,7 @@ action simultaneously.
 <a href="#sec1">Section 1. Doors</a>
 ################
 
-A door is a sector, usually placed between two rooms, whose ceiling
+A <a href="http://doomwiki.org/wiki/Door">door</a> is a <a href="http://doomwiki.org/wiki/Sector">sector</a>, usually placed between two rooms, whose ceiling
 raises to open, and lowers to close. 
 
 A door is fully closed when its ceiling height is equal to its floor
@@ -114,7 +114,7 @@ A door is fully open when its ceiling height is 4 less than the lowest
 neighbor ceiling adjacent to it. 
 
 A door may be set to an intermediate state initially, or thru the action
-of a linedef trigger that affects ceilings or floors. The door is passable
+of a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> trigger that affects ceilings or floors. The door is passable
 to a player when its ceiling is at least 56 units higher than its floor.
 In general the door is passable to a monster or a thing when its ceiling
 is at least the monster or thing's height above the floor.
@@ -127,7 +127,6 @@ If a door has a ceiling height BELOW the fully closed height (that is
 the ceiling of the door sector is lower than the floor of the door
 sector) a close door action moves the ceiling to the fully closed
 height instantly.
-
 <a name="sec1.1">
 --------------------------
 <a href="#sec1.1">Section 1.1 Door functions</a>
@@ -150,23 +149,21 @@ Close, Wait, Then Open
 
 On activation, door closes fully, waits a specified period, then
 opens fully.
-
 <a name="sec1.2">
 ------------------------------
 <a href="#sec1.2">Section 1.2 Varieties of doors</a>
 ------------------------------
 
 A door can be triggered by pushing on it, walking over or pressing a
-linedef trigger tagged to it, or shooting a linedef tagged to it.
+<a href="http://doomwiki.org/wiki/Linedef">linedef</a> trigger tagged to it, or shooting a linedef tagged to it.
 These are called manual, walkover, switched, or gun doors resp.
-
 </pre>
 <script language="javascript">
   insertVideoFloat("door-activated lighting", "3m19s");
 </script>
 <pre>
 Since a push door (P1/PR) has no use for its tag, BOOM has extended
-the functionality to include changing any tagged sectors to maximum
+the functionality to include changing any tagged <a href="http://doomwiki.org/wiki/Sector">sectors</a> to maximum
 neighbor lighting on fully opening, then to minimum neighbor lighting
 on fully closing. This is true for regular, extended, and generalized
 doors with push triggers.
@@ -188,7 +185,6 @@ Any door function except Close and Stay Closed, when closing and
 encountering a monster or player's head will bounce harmlessly off
 that head and return to fully open. A Close and Stay Closed will rest
 on the head until it leaves the door sector.
-
 <a name="sec1.3">
 ------------------------------
 <a href="#sec1.3">Section 1.3 Door linedef types</a>
@@ -260,7 +256,6 @@ for each parameter, any combination of parameters is allowed:
 
 Slow and Fast represent the same speeds as slow and fast regular doors. Normal
 is twice as fast as slow, Fast is twice normal, Turbo is twice Fast.
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedDoors);
@@ -275,7 +270,6 @@ Generalized Door Types
                  W1/WR         Fast     9s             Close and Stay Closed
                  G1/GR         Turbo    30s            Close, Wait, Then Open
                         
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLockedDoors);
@@ -325,7 +319,7 @@ possible in this case. If no such floor exists, the floor does not move.
 Lowest Neighbor Ceiling (LnC)
 
 This means that the floor height changes to the height of the lowest
-ceiling possessed by any neighboring sector, including that floor's
+ceiling possessed by any neighboring <a href="http://doomwiki.org/wiki/Sector">sector</a>, including that floor's
 ceiling. If the target height is in the opposite direction to floor
 motion, motion is instant, otherwise at the floor action's speed.
 
@@ -392,7 +386,7 @@ texture and/or sector type without moving the floor.
 
 A floor can be activated by pushing on a linedef bounding it
 (generalized types only), or by pushing on a switch with the same tag
-as the floor sector, or by walking over a linedef with the same tag
+as the floor <a href="http://doomwiki.org/wiki/Sector">sector</a>, or by walking over a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> with the same tag
 as the floor, or by shooting a linedef with the same tag as the
 floor with an impact weapon.
 
@@ -410,7 +404,7 @@ sector. The sector type may be zeroed instead of copied from the
 model, or not changed at all. These change types are referred to
 below as Tx (texture only), Tx0 (type zeroed), and TxTy (texture and
 type changed). The model sector for the change may be the sector on
-the first sidedef of the trigger (trigger model) or the sector with
+the first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of the trigger (trigger model) or the sector with
 floor at destination height across the lowest numbered two-sided
 linedef surrounding the affected sector (numeric model). If no model
 sector exists, no change occurs. If a change occurs, floor texture is
@@ -522,7 +516,6 @@ linedef type parameters. Any combination of parameters is allowed:
 Slow and Fast represent the same speeds as slow and fast regular
 floors. Normal is twice as fast as slow, Fast is twice normal, Turbo
 is twice Fast.
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedFloors);
@@ -552,8 +545,7 @@ TxTy = Texture and Type copied
 ####################
 <a name="sec3">
 ----------------------------
-<a name="sec3.1">
-<a href="#sec3.1">Section 3.1 Ceiling Targets</a>
+<a name="sec3.1"><a href="#sec3.1">Section 3.1 Ceiling Targets</a>
 ----------------------------
 
 Highest Neighbor Ceiling (HnC)
@@ -624,9 +616,9 @@ texture the motion is to -32000 or +32000 depending on direction.
 <a href="#sec3.2">Section 3.2 Varieties of ceilings</a>
 ----------------------------------
 
-A ceiling can be activated by pushing on a linedef bounding it
+A ceiling can be activated by pushing on a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> bounding it
 (generalized types only), or by pushing on a switch with the same tag
-as the ceiling sector, or by walking over a linedef with the same tag
+as the ceiling <a href="http://doomwiki.org/wiki/Sector">sector</a>, or by walking over a linedef with the same tag
 as the ceiling, or by shooting a linedef with the same tag as the
 ceiling with an impact weapon (generalized types only).
 
@@ -644,7 +636,7 @@ model sector. The sector type may be zeroed instead of copied from
 the model, or not changed at all. These change types are referred to
 below as Tx (texture only), Tx0 (type set to 0), and TxTy (texture
 and type copied from model). The model sector for the change may be
-the sector on the first sidedef of the trigger (trigger model) or the
+the sector on the first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of the trigger (trigger model) or the
 sector with ceiling at destination height across the lowest numbered
 two-sided linedef surrounding the affected sector (numeric model). If
 no model sector exists, no change occurs. If a change occurs, ceiling
@@ -699,7 +691,6 @@ Regular and Extended Ceiling Types
 204   Ext     S1     Dn  Slow  None  --  No  No   Highest Neighbor Floor
 202   Ext     WR     Dn  Slow  None  --  No  No   Highest Neighbor Floor
 200   Ext     W1     Dn  Slow  None  --  No  No   Highest Neighbor Floor
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedCeilings);
@@ -728,7 +719,7 @@ TxTy = Texture and Type copied
 <a href="#sec4">Section 4. Platforms (Lifts)</a>
 ############################
 
-A platform is basically a floor action involving two heights. The
+A <a href="http://doomwiki.org/wiki/Lift">platform</a> is basically a floor action involving two heights. The
 simple raise platform actions, for example, differ from the
 corresponding floor actions in that if they encounter an obstacle,
 they reverse direction and return to their former height.
@@ -800,9 +791,9 @@ more.
 <a href="#sec4.2">Section 4.2 Varieties of Platforms</a>
 -----------------------------------
 
-A platform can be activated by pushing on a linedef bounding it
+A platform can be activated by pushing on a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> bounding it
 (generalized types only), or by pushing on a switch with the same tag
-as the platform sector, or by walking over a linedef with the same tag
+as the platform <a href="http://doomwiki.org/wiki/Sector">sector</a>, or by walking over a linedef with the same tag
 as the platform, or by shooting a linedef with the same tag as the
 platform with an impact weapon.
 
@@ -821,7 +812,7 @@ sector. The sector type may be zeroed instead of copied from the
 model, or not changed at all. These change types are referred to
 below as Tx (texture only), Tx0 (type zeroed), and TxTy (texture and
 type changed). The model sector for the change is always the sector
-on the first sidedef of the trigger (trigger model).  If a change
+on the first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of the trigger (trigger model).  If a change
 occurs, floor texture is always affected, lighting is never affected,
 even that corresponding to the sector's type, nor is any other sector
 property other than the sector's type.
@@ -872,7 +863,6 @@ Regular and Extended Platform Types
 
 211   Ext    SR     --  Inst None --  No  Ceiling (toggle)
 212   Ext    WR     --  Inst None --  No  Ceiling (toggle)
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLifts);
@@ -892,14 +882,14 @@ Generalized Lift Types
 <a href="#sec5">Section 5. Crusher Ceilings</a>
 ############################
 
-A crusher ceiling is a linedef type that causes the ceiling to cycle
+A <a href="http://doomwiki.org/wiki/Crushing_ceiling">crusher ceiling</a> is a linedef type that causes the ceiling to cycle
 between its starting height and 8 above the floor, damaging
-monsters and players that happen to be in between. Barrels explode
+monsters and players that happen to be in between. <a href="http://doomwiki.org/wiki/Barrel">Barrels</a> explode
 when crushed.
 
 Once a crusher ceiling is started it remains running for the
 remainder of the level even if temporarily suspended with a stop type.
-No other ceiling action can be used in that sector thereafter.
+No other ceiling action can be used in that <a href="http://doomwiki.org/wiki/Sector">sector</a> thereafter.
 <a name="sec5.1">
 ----------------------------------
 <a href="#sec5.1">Section 5.1 Varieties of Crushers</a>
@@ -907,7 +897,7 @@ No other ceiling action can be used in that sector thereafter.
 
 A crusher can be activated by pushing on a linedef bounding it
 (generalized types only), or by pushing on a switch with the same tag
-as the crusher sector, or by walking over a linedef with the same tag
+as the crusher <a href="http://doomwiki.org/wiki/Sector">sector</a>, or by walking over a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> with the same tag
 as the crusher, or by shooting a linedef with the same tag as the
 crusher with an impact weapon (generalized types only).
 
@@ -954,7 +944,6 @@ Regular and Extended Crusher Types
 168   Ext    S1     ---- --  --     Stop
 74,   Reg    WR     ---- --  --     Stop
 57,   Reg    W1     ---- --  --     Stop
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedCrushers);
@@ -973,7 +962,7 @@ Generalized Crusher Types
 <a href="#sec6">Section 6. Stair Builders</a>
 ##########################
 
-A stair builder is a linedef type that sets a sequence of sectors
+A <a href="http://doomwiki.org/wiki/Linedef_type#Stair_builders">stair builder</a> is a <a href="http://doomwiki.org/wiki/Linedef_type">linedef type</a> that sets a sequence of <a href="http://doomwiki.org/wiki/Sector">sectors</a>
 defined by a complex rule to an ascending or descending sequence of
 heights.
 
@@ -983,7 +972,7 @@ The rule for stair building is as follows:
 falls by the stair stepsize, at the stair speed.
 
 2) To find the next step (sector) affected examine all two-sided
-linedefs with first sidedef facing into the previous step for the one
+<a href="http://doomwiki.org/wiki/Linedef">linedefs</a> with first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> facing into the previous step for the one
 with lowest linedef number. The sector on the other side of this
 linedef is the next step. If no such linedef exists, stair building
 ceases.
@@ -1003,9 +992,9 @@ instant.
 <a href="#sec6.1">Section 6.1 Varieties of Stair Builders</a>
 ----------------------------------------
 
-A stair can be activated by pushing on a linedef bounding it
+A stair can be activated by pushing on a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> bounding it
 (generalized types only), or by pushing on a switch with the same tag
-as the stair sector, or by walking over a linedef with the same tag
+as the stair <a href="http://doomwiki.org/wiki/Sector">sector</a>, or by walking over a linedef with the same tag
 as the stair, or by shooting a linedef with the same tag as the
 stair with an impact weapon (generalized types only).
 
@@ -1048,7 +1037,6 @@ Regular and Extended Stairs Types
 257   Ext    WR    Up  Fast  16   No     No
 100   Reg    W1    Up  Fast  16   No     No
 
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedStairs);
@@ -1068,8 +1056,8 @@ Generalized Stairs Types
 <a href="#sec7">Section 7 Elevators</a>
 ####################
 
-An elevator is a linedef type that moves both floor and ceiling
-together. All elevator linedefs are extended, there are no regular or
+An <a href="http://doomwiki.org/wiki/Elevator">elevator</a> is a <a href="http://doomwiki.org/wiki/Linedef_type">linedef type</a> that moves both floor and ceiling
+together. All elevator <a href="http://doomwiki.org/wiki/Linedef">linedefs</a> are extended, there are no regular or
 generalized elevator types. Instant elevator motion is not possible,
 and monsters cannot activate elevators. All elevator triggers are
 either switched or walkover.
@@ -1093,13 +1081,12 @@ there is no lower floor the elevator doesn't move.
 Current Floor
 
 The elevator floor moves to the height of the floor on the first
-sidedef of the triggering line, the ceiling remaining the same height
+<a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of the triggering line, the ceiling remaining the same height
 above the elevator floor.
 <a name="sec7.2">
 -----------------------------------
 <a href="#sec7.2">Section 7.2 Elevator Linedef Types</a>
 -----------------------------------
-
 </pre>
 <script language="javascript">
   insertVideoFloat("extended elevator types", "4m24s");
@@ -1128,7 +1115,7 @@ Extended Elevator types
 <a href="#sec7">Section 7 Lighting</a>
 ###################
 
-The lighting linedef types change the lighting in the tagged sector.
+The lighting <a href="http://doomwiki.org/wiki/Linedef_type">linedef types</a> change the lighting in the tagged <a href="http://doomwiki.org/wiki/Sector">sector</a>.
 All are regular or extended types, there are no generalized lighting
 types. All are switched or walkovers.
 <a name="sec7x.1">
@@ -1138,7 +1125,7 @@ types. All are switched or walkovers.
 
 Lights to Minimum Neighbor
 
-Each tagged sector is set to the minimum light level found in any
+Each tagged <a href="http://doomwiki.org/wiki/Sector">sector</a> is set to the minimum light level found in any
 adjacent sector. The tagged sectors are changed in numerical order, 
 and this may influence the result.
 
@@ -1204,19 +1191,18 @@ Regular and Extended Lighting types
 <a href="#sec8">Section 8 Exits</a>
 ################
 
-An exit linedef type ends the current level bringing up the
+An exit <a href="http://doomwiki.org/wiki/Linedef_type">linedef type</a> ends the current level bringing up the
 intermission screen with its report of kills/items/secrets or frags
 in the case of deathmatch. Obviously, none are retriggerable, and
-none require tags, since no sector is affected.
+none require tags, since no <a href="http://doomwiki.org/wiki/Sector">sector</a> is affected.
 <a name="sec8.1">
 ---------------------------
 <a href="#sec8.1">Section 8.1 Exit Varieties</a>
 ---------------------------
 
 An exit can be activated by pushing on a switch with the exit type
-or  by walking over a linedef with the exit type, or by shooting a 
+or  by walking over a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> with the exit type, or by shooting a 
 linedef with the exit type with an impact weapon.
-
 </pre>
 <script language="javascript">
   insertVideoFloat("shootable exits", "6m15s");
@@ -1252,21 +1238,20 @@ Regular and Extended Exit types
 <a href="#sec9">Section 9 Teleporters</a>
 ######################
 
-A teleporter is a linedef that when crossed or switched makes the
+A <a href="http://doomwiki.org/wiki/Teleporter">teleporter</a> is a linedef that when crossed or switched makes the
 player or monster appear elsewhere in the level. There are only
 regular and extended teleporters, no generalized teleporters exist
 (yet).  Teleporters are the only direction sensitive walkover
 triggers in DOOM (to allow them to be exited without teleporting
-again). They must be crossed from the first sidedef side in order to
+again). They must be crossed from the first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> side in order to
 work.
-
 </pre>
 <script language="javascript">
   insertVideoFloat("silent teleporters", "3m30s");
 </script>
 <pre>
 The place that the player or monster appears is set in one of two
-ways. The more common is by a teleport thing in the sector tagged to
+ways. The more common is by a teleport thing in the <a href="http://doomwiki.org/wiki/Sector">sector</a> tagged to
 the teleport line. The newer completely player preserving line-line
 silent teleport makes the player appear relative to the exit line
 (identified by having the same tag as the entry line) with the same
@@ -1293,7 +1278,6 @@ occupying the spot dies messily, and this is called a telefrag.
 -------------------------------
 <a href="#sec9.1">Section 9.1 Teleport Varieties</a>
 -------------------------------
-
 </pre>
 <script language="javascript">
   insertVideoFloat("switch activated teleporters", "4m54s");
@@ -1302,7 +1286,7 @@ occupying the spot dies messily, and this is called a telefrag.
 A teleporter can be walkover or switched, and retriggerable or not.
 
 A teleporter can have destination set by a teleport thing in the
-tagged sector, or by a line tagged the same as the teleport line.
+tagged <a href="http://doomwiki.org/wiki/Sector">sector</a>, or by a line tagged the same as the teleport line.
 These are called thing teleporters and line teleporters resp.
 
 A teleporter can preserve orientation or set orientation from the
@@ -1353,15 +1337,15 @@ Regular and Extended Teleport types
 <a href="#sec10">Section 10 Donuts</a>
 ##################
 
-A donut is a very specialized linedef type that lowers a pillar in a
+A donut is a very specialized <a href="http://doomwiki.org/wiki/Linedef_type">linedef type</a> that lowers a pillar in a
 surrounding pool, while raising the pool and changing its texture and
 type.
 
-The tagged sector is the pillar, and its lowest numbered line must be
+The tagged <a href="http://doomwiki.org/wiki/Sector">sector</a> is the pillar, and its lowest numbered line must be
 two-sided. The sector on the other side of that is the pool. The pool
-must have a two-sided line whose second sidedef does not adjoin the
+must have a two-sided line whose second <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> does not adjoin the
 pillar, and the sector on the second side of the lowest numbered such
-linedef is the model for the pool's texture change. The model sector
+<a href="http://doomwiki.org/wiki/Linedef">linedef</a> is the model for the pool's texture change. The model sector
 floor also provides the destination height both for lowering the
 pillar and raising the pool.
 
@@ -1385,8 +1369,8 @@ Regular and Extended Donut types
 <a href="#sec11">Section 11 Property Transfer</a>
 #############################
 
-These linedefs are special purpose and are used to transfer
-properties from the linedef itself or the sector on its first sidedef 
+These <a href="http://doomwiki.org/wiki/Linedef_type">linedefs</a> are special purpose and are used to transfer
+properties from the linedef itself or the <a href="http://doomwiki.org/wiki/Sector">sector</a> on its first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> 
 to the tagged sector(s). None are triggered, they simply exist.
 
 Extended Property Transfer Linedefs
@@ -1409,20 +1393,19 @@ Used to make 2s normal textures translucent. If tag==0, then this linedef's
 normal texture is made translucent if it's 2s, and the default translucency
 map TRANMAP is used as the filter. If tag!=0, then all similarly-tagged 2s
 linedefs' normal textures are made translucent, and if this linedef's first
-sidedef contains a valid lump name for its middle texture (as opposed to a
+<a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> contains a valid lump name for its middle texture (as opposed to a
 texture name), and the lump is 64K long, then that lump will be used as the
 translucency filter instead of the default TRANMAP, allowing different
 filters to be used in different parts of the same maps. If the first side's
 normal texture is not a valid translucency filter lump name, it must be a
 valid texture name, and will be displayed as such on this linedef.
-
 </pre>
 <script language="javascript">
   insertVideoFloat("type 242 property transfer", "1m40s");
 </script>
 <pre>
 242   Ext --   Set Tagged Lighting, Flats Heights to 1st Sidedef's Sector,
-               and set colormap based on sidedef textures.
+               and set <a href="http://doomwiki.org/wiki/COLORMAP">colormap</a> based on sidedef textures.
 
 This allows the tagged sector to have two levels -- an actual floor and 
 ceiling, and another floor or ceiling where more flats are rendered. Things
@@ -1529,13 +1512,13 @@ the viewer. Similarly, if F_SKY1 is used as the control sector's floor texture,
 then when the player's head is over a fake ceiling, the control sector's
 ceiling is used throughout.
 
-F_SKY1 causes HOM when used as a fake ceiling between the viewer and normal
+F_SKY1 causes <a href="http://doomwiki.org/wiki/Hall_of_mirrors_effect">HOM</a> when used as a fake ceiling between the viewer and normal
 space. Since there is no other good use for it, this kaleidescope is an
 option turned on by F_SKY1. Note that this does not preclude the use of sky
 REAL ceilings over deep water -- this is the control sector's ceiling, the
 one displayed when the viewer is underwater, not the real one.
 
-A colormap has the same size and format as Doom's COLORMAP. Extra colormaps
+A colormap has the same size and format as Doom's <a href="http://doomwiki.org/wiki/COLORMAP">COLORMAP</a>. Extra colormaps
 may defined in Boom by adding them between C_START and C_END markers in wads.
 Colormaps between C_START and C_END are automatically merged by Boom with any
 previously defined colormaps.
@@ -1545,8 +1528,8 @@ blue-green tint while the player is under water. WATERMAP can be modified by
 pwads.
 
 Ceiling bleeding may occur if required upper textures are not used.
-<a name="ld223">
 </pre>
+<a name="ld223">
 <script language="javascript">
   insertVideoFloat("friction effects", "5m8s");
 </script>
@@ -1636,8 +1619,8 @@ pushers.
 
 
 225  Ext  --   Length/Direction Sets Current Force in tagged Sectors
-<a name="sec11-pp">
 </pre>
+<a name="sec11-pp">
 <script language="javascript">
   insertVideoFloat("point pushers", "5m38s");
 </script>
@@ -1647,7 +1630,7 @@ Point pushers
 Two types of point pushers are available, push and pull.
 
 The previous implementation of these was SECTOR-SPECIFIC. The new
-implementation ignores sector boundaries and provides the effect in a
+implementation ignores <a href="http://doomwiki.org/wiki/Sector">sector</a> boundaries and provides the effect in a
 circular area whose center is defined by a Thing of type 5001 (push)
 or 5002 (pull). You now also don't have to set any option flags on these
 Things. A new linedef type of 226 is used to control the effect, and this
@@ -1671,17 +1654,17 @@ pushers.
 ###########################################
 <a href="#sec12">Section 12 Scrolling Walls, Flats, Objects</a>
 ###########################################
-
-<a name="sec12-static">
 </pre>
+<a name="sec12-static">
 <script language="javascript">
   insertVideoFloat("static scrollers", "0m0s");
 </script>
 <pre>
+
 Static Scrollers
 
 The most basic kind of scrolling linedef causes some part of the tagged
-sector or tagged wall to scroll, in proportion to the length of the
+<a href="http://doomwiki.org/wiki/Sector">sector</a> or tagged wall to scroll, in proportion to the length of the
 linedef the trigger is on, and according to the direction that trigger
 linedef lies. For each 32 units of length of the trigger, the tagged
 object scrolls 1 unit per frame. Since the length of a linedef doesn't
@@ -1728,13 +1711,13 @@ perpendicular to the wall causes the wall to scroll vertically. The
 length of the component parallel to the wall sets the horizontal
 scroll rate, the length of the component perpendicular to the wall
 sets the vertical scroll rate.
-
-<a name="sec12-simple">
 </pre>
+<a name="sec12-simple">
 <script language="javascript">
   insertVideoFloat("simple static scrollers", "1m26s");
 </script>
 <pre>
+
 Simple Static Scrollers
 
 For convenience three simpler static scroll functions are provided
@@ -1744,7 +1727,7 @@ rate and don't want to bother with proportionality.
 255    -- Scroll Wall Using Sidedef Offsets                   
 
 For simplicity, a static scroller is provided that scrolls the first
-sidedef of a linedef, based on its x- and y- offsets. No tag is used.
+<a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of a linedef, based on its x- and y- offsets. No tag is used.
 The x offset controls the rate of horizontal scrolling, 1 unit per
 frame per x offset, and the y offset controls the rate of vertical
 scrolling, 1 unit per frame per y offset.
@@ -1765,7 +1748,7 @@ Dynamic Scrolling
 
 To achieve dynamic scrolling effects, the position or rate of scrolling
 is controlled by the relative position of the floor and ceiling of the
-sector on the scrolling trigger's first sidedef. The direction of
+sector on the scrolling trigger's first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a>. The direction of
 scrolling remains controlled by the direction of the linedef trigger.
 Either the floor or ceiling may move in the controlling sector, or
 both. The control variable is the amount of change in the sum of the
@@ -1773,8 +1756,8 @@ floor and ceiling heights.
 
 All scroll effects are additive, and thus two or more effects may
 reinforce and/or cancel each other.
-<a name="sec12-displace">
 </pre>
+<a name="sec12-displace">
 <script language="javascript">
   insertVideoFloat("displacement scrollers", "0m16s");
 </script>
@@ -1783,7 +1766,7 @@ Displacement Scrollers
 
 In the first kind, displacement scrolling, the position of the scrolled
 objects or walls changes proportionally to the motion of the floor or
-ceiling in the sector on the first sidedef of the scrolling trigger. 
+ceiling in the sector on the first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of the scrolling trigger. 
 The proportionality is set by the length of the linedef trigger. If it
 is 32 units long, the wall, floor, ceiling, or object moves 1 unit for
 each unit the floor or ceiling of the controlling sector moves. If it
@@ -1834,18 +1817,18 @@ scroll displacement, the length of the component perpendicular to
 the wall sets the vertical scroll displacement. The distance scrolled
 is the controlling sector's height change times the trigger length,
 divided by 32.
-
+</pre>
 <a name="sec12-accel">
 <a name="sec12-displace">
-</pre>
 <script language="javascript">
   insertVideoFloat("accelerative scrollers", "0m42s");
 </script>
 <pre>
+
 Accelerative Scrollers
 
 The second kind of dynamic scrollers, accelerative scrollers, also
-react to height changes in the sector on the first sidedef of the
+react to height changes in the sector on the first <a href="http://doomwiki.org/wiki/Sidedef">sidedef</a> of the
 linedef trigger, but the RATE of scrolling changes, not the
 displacement. That is, changing the controlling sector's height
 speeds up or slows down the scrolling by the change in height
@@ -1925,10 +1908,10 @@ change times the trigger length, divided by 32.
 #######################################################
 
 
-BOOM has added generalized linedef types that permit the parameters
+BOOM has added generalized <a href="http://doomwiki.org/wiki/Linedef_type">linedef types</a> that permit the parameters
 of linedef actions to be nearly independently chosen. 
 
-To support these, DETH has been modified to support them via dialogs
+To support these, <a href="http://doomwiki.org/wiki/DETH">DETH</a> has been modified to support them via dialogs
 for each generalized type; each dialog allows the parameters for
 that type to be independently specified by choice from a array of
 radio buttons. A parser has also been added to support reading back
@@ -1995,7 +1978,6 @@ across the lowest numbered two sided line for its model. If no model
 exists, no change occurs. Note that in DOOM II v1.9, no model meant
 an illegal sector type was generated.
 
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedFloors);
@@ -2045,7 +2027,6 @@ Notes:
    destination height on the opposite side of the lowest numbered
    two sided linedef around the tagged sector. If it doesn't exist
    no change occurs.
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedCeilings);
@@ -2095,7 +2076,6 @@ Notes:
    destination height on the opposite side of the lowest numbered
    two sided linedef around the tagged sector. If it doesn't exist
    no change occurs.
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedDoors);
@@ -2131,7 +2111,6 @@ Notes:
    do not.
 2) The precise delay timings in gametics are: 35/150/300/1050
 3) Speed is 2/4/8/16 units per tic
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLockedDoors);
@@ -2169,7 +2148,6 @@ Notes:
    otherwise they are treated identically. Hence an "all" type door
    requires 3 keys if sk=ck is 1, and 6 keys if sk=ck is 0.
 4) Speed is 2/4/8/16 units per tic
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLifts);
@@ -2208,7 +2186,6 @@ Notes:
 4) Starting a perpetual lift between lowest and highest neighboring floors
    locks out all other actions on the sector, even if it is stopped with
    the non-extended stop perpetual floor function.
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedStairs);
@@ -2245,7 +2222,6 @@ Notes:
    a step does not have the same texture as the previous.
 3) A retriggerable stairs builds up and down alternately on each
    trigger.
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedCrushers);
@@ -2283,7 +2259,7 @@ Notes:
                         <a href="#p2">Part II Sector Types</a>
 ======================================================================
 
-BOOM is backward compatible with DOOM's sector types. All types 0-17
+BOOM is backward compatible with DOOM's <a href="http://doomwiki.org/wiki/Sector_type">sector types</a>. All types 0-17
 have the same meaning they did under DOOM. Types 18-31 are reserved
 for extended sector types, that work like DOOM's and share the
 limitation that only one type can be active in a sector at once. No
@@ -2293,7 +2269,7 @@ extended sector types are implemented at this time.
 <a href="#sec14">Section 14. Regular Sector types</a>
 ####################################
 
-From Matt Fell's Unofficial DOOM Spec the DOOM sector types are:
+From Matt Fell's <a href="http://doomwiki.org/wiki/Unofficial_Doom_Specs">Unofficial DOOM Spec</a> the DOOM sector types are:
 
 Dec Hex Class   Description
 -------------------------------------------------------------------
@@ -2326,13 +2302,12 @@ was the case with DOOM. The sector type will merely be ignored.
 ####################################
 <a href="#sec15">Section 15. Generalized sector types</a>
 ####################################
-
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedSectors);
 </script>
 <pre>
-BOOM also provides generalized sector types, based on bit fields,
+BOOM also provides generalized <a href="http://doomwiki.org/wiki/Sector_type">sector types</a>, based on bit fields,
 that allow several sector type properties to be independently
 specified for a sector. Texture change linedefs can be used to switch
 some or all of these properties dynamically, outside lighting.
@@ -2387,8 +2362,8 @@ Bits 10 and 11 are not implemented yet, but are reserved for use in
 sound control. Bit 10 will suppress all sounds within the sector,
 while bit 11 will disable any sounds due to floor or ceiling motion
 by the sector.
-<a name="p3">
 </pre>
+<a name="p3">
 <script language="javascript">
   insertVideoFloat("the PassThru flag", "3m6s");
 </script>
@@ -2397,7 +2372,7 @@ by the sector.
                         <a href="#p3">Part III Linedef Flags</a>
 ======================================================================
 
-Only one new linedef flag is implemented, called PassThru, which
+Only one new <a href="http://doomwiki.org/wiki/Linedef_flag">linedef flag</a> is implemented, called PassThru, which
 allows a push or switch linedef trigger to pass the push action thru
 it to ones within range behind it. In this way BOOM is capable of
 setting off many actions with a single push. Note that the limitation
@@ -2410,8 +2385,8 @@ The new linedef flag is bit 9, value 512, in the linedef flags word.
                         <a href="#p4">Part IV Thing Flags</a>
 ======================================================================
 
-BOOM has implemented two new thing flags, "not in DM" and "not in
-COOP", which in combination with the existing "not in Single" flag,
+BOOM has implemented two new <a href="http://doomwiki.org/wiki/Thing_flag">thing flags</a>, "not in <a href="http://doomwiki.org/wiki/Deathmatch">DM</a>" and "not in
+<a href="http://doomwiki.org/wiki/Cooperative">COOP</a>", which in combination with the existing "not in Single" flag,
 usually called "Multiplayer", allow complete control over a level's
 inventory and monsters, in any game mode.
 
@@ -2554,7 +2529,7 @@ Switches and Animations
 SWITCHES       Definition of switch textures recognized
 ANIMATED       Definition of animated textures and flats recognized
 
-SWITCHES format:
+<a href="http://doomwiki.org/wiki/SWITCHES">SWITCHES</a> format:
 
 The SWITCHES lump makes the names of the switch textures used in the
 game known to the engine. It consists of a list of records each 20
@@ -2568,7 +2543,7 @@ bytes long, terminated by an entry (not used) whose last 2 bytes are 0.
     3=DOOM II, registered/retail DOOM, or shareware
     0=terminates list of known switches
 
-ANIMATED format:
+<a href="http://doomwiki.org/wiki/ANIMATED">ANIMATED</a> format:
 
 The ANIMATED lump makes the names of the animated flats and textures
 known to the engine. It consists of a list of records, each 23 bytes
