@@ -156,7 +156,13 @@ Calculator.prototype = {
 
 		// Change to result box updates controls
 		result.onchange = function() {
-			calc.setValue(parseInt(result.value));
+			var value = parseInt(result.value);
+			if (calc.isValidValue(value)) {
+				calc.setValue(value);
+				result.classList.remove("invalid-result");
+			} else {
+				result.classList.add("invalid-result");
+			}
 		}
 		return result;
 	},
@@ -182,6 +188,16 @@ Calculator.prototype = {
 		result.appendChild(body);
 
 		return result;
+	},
+
+	isValidValue: function(value) {
+		var mask = 0;
+		var i;
+		for (i = 0; i < this.calcData.parts.length; ++i) {
+			mask |= this.calcData.parts[i].mask;
+		}
+		return (value >= this.calcData.base
+		     && value <= this.calcData.base + mask);
 	},
 
 	getValue: function() {
