@@ -160,6 +160,11 @@ A door can be triggered by pushing on it, walking over or pressing a
 linedef trigger tagged to it, or shooting a linedef tagged to it.
 These are called manual, walkover, switched, or gun doors resp.
 
+</pre>
+<script language="javascript">
+  insertVideoFloat("door-activated lighting", "3m19s");
+</script>
+<pre>
 Since a push door (P1/PR) has no use for its tag, BOOM has extended
 the functionality to include changing any tagged sectors to maximum
 neighbor lighting on fully opening, then to minimum neighbor lighting
@@ -274,6 +279,7 @@ Generalized Door Types
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLockedDoors);
+  insertVideoFloat("generalized locked doors", "4m");
 </script>
 <pre>
 Generalized Locked Door Types
@@ -869,6 +875,7 @@ Regular and Extended Platform Types
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLifts);
+  insertVideoFloat("generalized lifts", "4m9s");
 </script>
 <pre>
 Generalized Lift Types
@@ -1040,9 +1047,11 @@ Regular and Extended Stairs Types
 257   Ext    WR    Up  Fast  16   No     No
 100   Reg    W1    Up  Fast  16   No     No
 
+
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedStairs);
+  insertVideoFloat("generalized stair builders", "4m4s");
 </script>
 <pre>
 Generalized Stairs Types
@@ -1090,6 +1099,11 @@ above the elevator floor.
 <a href="#sec7.2">Section 7.2 Elevator Linedef Types</a>
 -----------------------------------
 
+</pre>
+<script language="javascript">
+  insertVideoFloat("extended elevator types", "4m24s");
+</script>
+<pre>
 Extended Elevator types
 -------------------------------------------------------------------
 #     Class  Trig  Spd    Target
@@ -1202,6 +1216,11 @@ An exit can be activated by pushing on a switch with the exit type
 or  by walking over a linedef with the exit type, or by shooting a 
 linedef with the exit type with an impact weapon.
 
+</pre>
+<script language="javascript">
+  insertVideoFloat("shootable exits", "6m15s");
+</script>
+<pre>
 An exit can be normal or secret. The normal exit simply ends the
 level and takes you to the next level via the intermission screen. A
 secret exit only works in a special level depending on the IWAD being
@@ -1240,6 +1259,11 @@ triggers in DOOM (to allow them to be exited without teleporting
 again). They must be crossed from the first sidedef side in order to
 work.
 
+</pre>
+<script language="javascript">
+  insertVideoFloat("silent teleporters", "3m30s");
+</script>
+<pre>
 The place that the player or monster appears is set in one of two
 ways. The more common is by a teleport thing in the sector tagged to
 the teleport line. The newer completely player preserving line-line
@@ -1269,6 +1293,11 @@ occupying the spot dies messily, and this is called a telefrag.
 <a href="#sec9.1">Section 9.1 Teleport Varieties</a>
 -------------------------------
 
+</pre>
+<script language="javascript">
+  insertVideoFloat("switch activated teleporters", "4m54s");
+</script>
+<pre>
 A teleporter can be walkover or switched, and retriggerable or not.
 
 A teleporter can have destination set by a teleport thing in the
@@ -1386,6 +1415,11 @@ filters to be used in different parts of the same maps. If the first side's
 normal texture is not a valid translucency filter lump name, it must be a
 valid texture name, and will be displayed as such on this linedef.
 
+</pre>
+<script language="javascript">
+  insertVideoFloat("type 242 property transfer", "1m40s");
+</script>
+<pre>
 242   Ext --   Set Tagged Lighting, Flats Heights to 1st Sidedef's Sector,
                and set colormap based on sidedef textures.
 
@@ -1511,6 +1545,11 @@ pwads.
 
 Ceiling bleeding may occur if required upper textures are not used.
 <a name="ld223">
+</pre>
+<script language="javascript">
+  insertVideoFloat("friction effects", "5m8s");
+</script>
+<pre>
 223   Ext --   Length Sets Friction in tagged Sector,Sludge&lt;100, Ice&gt;100
 
 The length of the linedef with type 223 controls the amount of friction
@@ -1597,6 +1636,11 @@ pushers.
 
 225  Ext  --   Length/Direction Sets Current Force in tagged Sectors
 <a name="sec11-pp">
+</pre>
+<script language="javascript">
+  insertVideoFloat("point pushers", "5m38s");
+</script>
+<pre>
 Point pushers
 -------------
 Two types of point pushers are available, push and pull.
@@ -1685,6 +1729,11 @@ scroll rate, the length of the component perpendicular to the wall
 sets the vertical scroll rate.
 
 <a name="sec12-simple">
+</pre>
+<script language="javascript">
+  insertVideoFloat("simple static scrollers", "1m26s");
+</script>
+<pre>
 Simple Static Scrollers
 
 For convenience three simpler static scroll functions are provided
@@ -1786,6 +1835,12 @@ is the controlling sector's height change times the trigger length,
 divided by 32.
 
 <a name="sec12-accel">
+<a name="sec12-displace">
+</pre>
+<script language="javascript">
+  insertVideoFloat("accelerative scrollers", "0m42s");
+</script>
+<pre>
 Accelerative Scrollers
 
 The second kind of dynamic scrollers, accelerative scrollers, also
@@ -2332,6 +2387,11 @@ sound control. Bit 10 will suppress all sounds within the sector,
 while bit 11 will disable any sounds due to floor or ceiling motion
 by the sector.
 <a name="p3">
+</pre>
+<script language="javascript">
+  insertVideoFloat("the PassThru flag", "3m6s");
+</script>
+<pre>
 ======================================================================
                         <a href="#p3">Part III Linedef Flags</a>
 ======================================================================

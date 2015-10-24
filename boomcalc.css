@@ -55,10 +55,12 @@
 
 .side-float {
 	float: right;
+	clear: right;
 	font-family: Arial, Helvetica, sans-serif;
 	width: 20em;
 	border: 1px solid black;
 	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .side-float img {
