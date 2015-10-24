@@ -180,8 +180,8 @@ generalizedLockedDoors = {
 			"values": [
 				"Any key",
 				"Red keycard",
-				"Yellow keycard",
 				"Blue keycard",
+				"Yellow keycard",
 				"Red skull key",
 				"Blue skull key",
 				"Yellow skull key",
