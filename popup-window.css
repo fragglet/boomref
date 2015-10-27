@@ -1,0 +1,40 @@
+
+.popup-window {
+	position: fixed;
+	width: 25em;
+	right: 10px;
+	bottom: 10px;
+	background-color: lightgrey;
+	border-left: 2px solid #ddd;
+	border-top: 2px solid #ddd;
+	border-right: 2px solid #333;
+	border-bottom: 2px solid #333;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.popup-window .title-bar {
+	background: linear-gradient(to left, lightblue, blue);
+	color: white;
+	padding: 5px;
+	border: 1px solid lightgrey;
+	font-weight: bold;
+}
+
+.popup-window .title-bar .close-button {
+	float: right;
+	background-color: lightgrey;
+	cursor: pointer;
+	color: black;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	border-right: 1px solid darkgrey;
+	border-bottom: 1px solid darkgrey;
+}
+
+.popup-window .popup-body {
+	padding: 10px;
+}
+

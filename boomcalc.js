@@ -126,26 +126,6 @@ Calculator.prototype = {
 	onChange: function() {
 	},
 
-	createCloseButton: function() {
-		var result = document.createElement("div");
-		result.classList.add("close-button");
-		result.appendChild(document.createTextNode("X"));
-		var calc = this;
-		result.onclick = function() {
-			calc.close();
-		}
-		return result;
-	},
-
-	createTitleBar: function() {
-		var result = document.createElement("div");
-		result.classList.add("title-bar");
-		result.appendChild(this.createCloseButton());
-		var title = this.calcData.name + " calculator";
-		result.appendChild(document.createTextNode(title));
-		return result;
-	},
-
 	createResultBox: function() {
 		var result = document.createElement("div");
 		result.classList.add("result");
@@ -209,18 +189,17 @@ Calculator.prototype = {
 		return result;
 	},
 
-	createCalculator: function() {
-		var result = document.createElement("div");
-		result.classList.add("calculator");
-		result.appendChild(this.createTitleBar());
-
+	open: function() {
+		var title = this.calcData.name + " calculator";
 		var body = document.createElement("div");
-		body.classList.add("body");
+		body.classList.add("calculator");
 		body.appendChild(this.createResultBox());
 		body.appendChild(this.createControlsTable());
-		result.appendChild(body);
+		this.popupWindow = new PopupWindow(title, body);
+	},
 
-		return result;
+	close: function() {
+		this.popupWindow.close();
 	},
 
 	isValidValue: function(value) {
@@ -248,19 +227,7 @@ Calculator.prototype = {
 			this.controls[i].setValue(value);
 		}
 	},
-
-	open: function() {
-		this.calcWindow = this.createCalculator();
-		document.body.appendChild(this.calcWindow);
-	},
-
-	close: function() {
-		if (this.calcWindow != null) {
-			document.body.removeChild(this.calcWindow);
-			this.calcWindow = null;
-		}
-	},
-}
+};
 
 var currentCalculator = null;
 
