@@ -20,7 +20,7 @@ function insertCalculatorFloat(calcData) {
 	var result = insertBasicFloat("calc-float", "boomcalc.png");
 
 	var link = document.createElement("a");
-	link.setAttribute("href", "javascript:true;");
+	link.setAttribute("href", "javascript:void(0);");
 	link.onclick = function() {
 		openCalculator(calcData);
 	}
