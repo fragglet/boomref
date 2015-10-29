@@ -1,9 +1,13 @@
 
-.calculator {
+.calculator-window {
+	width: 400px;
+}
+
+.calculator-body {
 	padding: 10px;
 }
 
-.calculator .result > input {
+.calculator-body .result > input {
 	width: 80%;
 	background-color: black;
 	color: white;
@@ -14,7 +18,7 @@
 	padding: 0.5em;
 }
 
-.calculator .hex-control {
+.calculator-body .hex-control {
 	float: right;
 	width: 3em;
 	border-top: 1px solid darkgrey;
@@ -25,11 +29,11 @@
 	text-align: center;
 }
 
-.calculator input.invalid-result {
+.calculator-body input.invalid-result {
 	color: red;
 }
 
-.calculator .label {
+.calculator-body .label {
 	text-align: right;
 }
 

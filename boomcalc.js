@@ -192,10 +192,11 @@ Calculator.prototype = {
 	open: function() {
 		var title = this.calcData.name + " calculator";
 		var body = document.createElement("div");
-		body.classList.add("calculator");
+		body.classList.add("calculator-body");
 		body.appendChild(this.createResultBox());
 		body.appendChild(this.createControlsTable());
-		this.popupWindow = new PopupWindow(title, body);
+		this.popupWindow =
+			new PopupWindow("calculator-window", title, body);
 	},
 
 	close: function() {
@@ -229,13 +230,8 @@ Calculator.prototype = {
 	},
 };
 
-var currentCalculator = null;
-
 function openCalculator(calcData) {
-	if (currentCalculator != null) {
-		currentCalculator.close();
-	}
-	currentCalculator = new Calculator(calcData);
-	currentCalculator.open();
+	var calc = new Calculator(calcData);
+	calc.open();
 }
 

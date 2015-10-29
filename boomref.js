@@ -35,12 +35,60 @@ function insertCalculatorFloat(calcData) {
 	return result;
 }
 
+function parseTimestamp(timestamp) {
+	var regex = /((\d+)m)?((\d+)s?)/;
+	var match = regex.exec(timestamp);
+	var minutes = match[2] || "0";
+	var seconds = match[4] || "0";
+	return parseInt(minutes) * 60 + parseInt(seconds);
+}
+
+var videoPlayer = null;
+
+function openVideoWindow(seconds) {
+	var videoDiv = document.createElement("div");
+	var win = new PopupWindow("video-popup", "BOOMEDIT.WAD", videoDiv);
+
+	videoPlayer = new YT.Player(videoDiv, {
+		width: '100%',
+		videoId: 'd7WBQH5-1ps',
+		events: {
+			onReady: function() {
+				videoPlayer.seekTo(seconds);
+			},
+		},
+	});
+
+	// Track the video window so that we don't open a new window every
+	// time a video link is clicked - just seek the existing window.
+	win.onClose = function() {
+		videoPlayer = null;
+	}
+}
+
+// Seek the video window if it is open, and if it isn't, open one.
+function seekVideoWindow(timestamp) {
+	var seconds = parseTimestamp(timestamp);
+	if (videoPlayer != null) {
+		videoPlayer.seekTo(seconds);
+	} else {
+		openVideoWindow(seconds);
+	}
+}
+
 function insertVideoFloat(thing, timestamp) {
 	var result = insertBasicFloat("video-float", "youtube.png");
 
+	// Link is an actual link to the video location so the user can open
+	// the link in a new tab if desired, but in practice when clicked the
+	// video is opened in a popup window.
 	var link = document.createElement("a");
 	var url = "https://www.youtube.com/watch?v=d7WBQH5-1ps#t=" + timestamp;
 	link.setAttribute("href", url);
+	link.onclick = function(e) {
+		seekVideoWindow(timestamp);
+		return false;
+	}
 	link.appendChild(document.createTextNode("Click here"));
 	result.appendChild(link);
 
