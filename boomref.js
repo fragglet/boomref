@@ -4,9 +4,19 @@ VIDEO_BOOMEDIT_WAD = {
 	videoId: "d7WBQH5-1ps",
 }
 
+VIDEO_MBFEDIT_WAD = {
+	title: "MBFEDIT!.WAD",
+        videoId: "TbUwV5hMIwk",
+}
+
 VIDEO_SKY_WAD = {
 	title: "SKY.WAD",
 	videoId: "BfuN7mRSeYs",
+}
+
+VIDEO_HOCKEY_WAD = {
+	title: "HOCKEY.WAD",
+	videoId: "VyqVMGDZ0Ls",
 }
 
 var numSideFloats = 0;
