@@ -1,4 +1,14 @@
 
+VIDEO_BOOMEDIT_WAD = {
+	title: "BOOMEDIT.WAD",
+	videoId: "d7WBQH5-1ps",
+}
+
+VIDEO_SKY_WAD = {
+	title: "SKY.WAD",
+	videoId: "BfuN7mRSeYs",
+}
+
 var numSideFloats = 0;
 
 function insertBasicFloat(floatClass, iconPath) {
@@ -45,13 +55,13 @@ function parseTimestamp(timestamp) {
 
 var videoPlayer = null;
 
-function openVideoWindow(seconds) {
+function openVideoWindow(video, seconds) {
 	var videoDiv = document.createElement("div");
-	var win = new PopupWindow("video-popup", "BOOMEDIT.WAD", videoDiv);
+	var win = new PopupWindow("video-popup", video.title, videoDiv);
 
 	videoPlayer = new YT.Player(videoDiv, {
 		width: '100%',
-		videoId: 'd7WBQH5-1ps',
+		videoId: video.videoId,
 		events: {
 			onReady: function() {
 				videoPlayer.seekTo(seconds);
@@ -67,26 +77,34 @@ function openVideoWindow(seconds) {
 }
 
 // Seek the video window if it is open, and if it isn't, open one.
-function seekVideoWindow(timestamp) {
+function seekVideoWindow(video, timestamp) {
 	var seconds = parseTimestamp(timestamp);
 	if (videoPlayer != null) {
-		videoPlayer.seekTo(seconds);
-	} else {
-		openVideoWindow(seconds);
+		// Check we have the same video open we want to play.
+		var url = videoPlayer.getVideoUrl();
+		if (url.indexOf("v=" + video.videoId) >= 0) {
+			videoPlayer.seekTo(seconds);
+			return;
+		}
 	}
+	openVideoWindow(video, seconds);
 }
 
-function insertVideoFloat(thing, timestamp) {
+function insertVideoFloat(video, thing, timestamp) {
 	var result = insertBasicFloat("video-float", "youtube.png");
 
 	// Link is an actual link to the video location so the user can open
 	// the link in a new tab if desired, but in practice when clicked the
 	// video is opened in a popup window.
 	var link = document.createElement("a");
-	var url = "https://www.youtube.com/watch?v=d7WBQH5-1ps#t=" + timestamp;
+	var url = (
+		"https://www.youtube.com/watch?" +
+		"v=" + video.videoId +
+		"#t=" + timestamp
+	);
 	link.setAttribute("href", url);
 	link.onclick = function(e) {
-		seekVideoWindow(timestamp);
+		seekVideoWindow(video, timestamp);
 		return false;
 	}
 	link.appendChild(document.createTextNode("Click here"));

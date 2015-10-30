@@ -177,7 +177,7 @@ A door can be triggered by pushing on it, walking over or pressing a
 These are called manual, walkover, switched, or gun doors resp.
 </pre>
 <script language="javascript">
-  insertVideoFloat("door-activated lighting", "3m19s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "door-activated lighting", "3m19s");
 </script>
 <pre>
 Since a push door (P1/PR) has no use for its tag, BOOM has extended
@@ -291,7 +291,7 @@ Generalized Door Types
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLockedDoors);
-  insertVideoFloat("generalized locked doors", "4m");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "generalized locked doors", "4m");
 </script>
 <pre>
 Generalized Locked Door Types
@@ -884,7 +884,7 @@ Regular and Extended Platform Types
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedLifts);
-  insertVideoFloat("generalized lifts", "4m9s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "generalized lifts", "4m9s");
 </script>
 <pre>
 Generalized Lift Types
@@ -1058,7 +1058,7 @@ Regular and Extended Stairs Types
 </pre>
 <script language="javascript">
   insertCalculatorFloat(generalizedStairs);
-  insertVideoFloat("generalized stair builders", "4m4s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "generalized stair builders", "4m4s");
 </script>
 <pre>
 Generalized Stairs Types
@@ -1107,7 +1107,7 @@ above the elevator floor.
 -----------------------------------
 </pre>
 <script language="javascript">
-  insertVideoFloat("extended elevator types", "4m24s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "extended elevator types", "4m24s");
 </script>
 <pre>
 Extended Elevator types
@@ -1223,7 +1223,7 @@ or  by walking over a <a href="http://doomwiki.org/wiki/Linedef">linedef</a> wit
 linedef with the exit type with an impact weapon.
 </pre>
 <script language="javascript">
-  insertVideoFloat("shootable exits", "6m15s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "shootable exits", "6m15s");
 </script>
 <pre>
 An exit can be normal or secret. The normal exit simply ends the
@@ -1265,7 +1265,7 @@ again). They must be crossed from the first <a href="http://doomwiki.org/wiki/Si
 work.
 </pre>
 <script language="javascript">
-  insertVideoFloat("silent teleporters", "3m30s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "silent teleporters", "3m30s");
 </script>
 <pre>
 The place that the player or monster appears is set in one of two
@@ -1298,7 +1298,8 @@ occupying the spot dies messily, and this is called a telefrag.
 -------------------------------
 </pre>
 <script language="javascript">
-  insertVideoFloat("switch activated teleporters", "4m54s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "switch activated teleporters",
+                   "4m54s");
 </script>
 <pre>
 A teleporter can be walkover or switched, and retriggerable or not.
@@ -1419,7 +1420,7 @@ normal texture is not a valid translucency filter lump name, it must be a
 valid texture name, and will be displayed as such on this linedef.
 </pre>
 <script language="javascript">
-  insertVideoFloat("type 242 property transfer", "1m40s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "type 242 property transfer", "1m40s");
 </script>
 <pre>
 <a name="ld242" href="#ld242">242</a>   Ext --   Set Tagged Lighting, Flats Heights to 1st Sidedef's Sector,
@@ -1548,7 +1549,7 @@ pwads.
 Ceiling bleeding may occur if required upper textures are not used.
 </pre>
 <script language="javascript">
-  insertVideoFloat("friction effects", "5m8s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "friction effects", "5m8s");
 </script>
 <pre>
 <a name="ld223" href="#ld223">223</a>   Ext --   Length Sets Friction in tagged Sector,Sludge&lt;100, Ice&gt;100
@@ -1565,6 +1566,7 @@ on or off thru texture/type changes.
   insertInfoFloat("Linedef types 271 and 272 were added in MBF, and are " +
                   "not supported in Boom. This text is from MBF's version " +
 		  "of boomref.txt.");
+  insertVideoFloat(VIDEO_SKY_WAD, "sky texture transfer", "3s");
 </script>
 <pre>
 <a name="ld271" href="#ld271">271</a>   Ext --   Transfer sky texture to tagged sectors 
@@ -1644,7 +1646,7 @@ pushers.
 <a name="ld225" href="#ld225">225</a>  Ext  --   Length/Direction Sets Current Force in tagged Sectors
 </pre>
 <script language="javascript">
-  insertVideoFloat("point pushers", "5m38s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "point pushers", "5m38s");
 </script>
 <pre>
 <a name="sec11-pp" href="#sec11-pp">Point pushers</a>
@@ -1678,7 +1680,7 @@ pushers.
 ###########################################
 </pre>
 <script language="javascript">
-  insertVideoFloat("static scrollers", "0m0s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "static scrollers", "0m0s");
 </script>
 <pre>
 
@@ -1734,7 +1736,7 @@ scroll rate, the length of the component perpendicular to the wall
 sets the vertical scroll rate.
 </pre>
 <script language="javascript">
-  insertVideoFloat("simple static scrollers", "1m26s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "simple static scrollers", "1m26s");
 </script>
 <pre>
 
@@ -1778,7 +1780,7 @@ All scroll effects are additive, and thus two or more effects may
 reinforce and/or cancel each other.
 </pre>
 <script language="javascript">
-  insertVideoFloat("displacement scrollers", "0m16s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "displacement scrollers", "0m16s");
 </script>
 <pre>
 <a name="sec12-displace" href="#sec12-displace">Displacement Scrollers</a>
@@ -1838,7 +1840,7 @@ is the controlling sector's height change times the trigger length,
 divided by 32.
 </pre>
 <script language="javascript">
-  insertVideoFloat("accelerative scrollers", "0m42s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "accelerative scrollers", "0m42s");
 </script>
 <pre>
 
@@ -2381,7 +2383,7 @@ while bit 11 will disable any sounds due to floor or ceiling motion
 by the sector.
 </pre>
 <script language="javascript">
-  insertVideoFloat("the PassThru flag", "3m6s");
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "the PassThru flag", "3m6s");
 </script>
 <pre>
 ======================================================================
