@@ -38,3 +38,20 @@ a[name] {
 	width: 480px;
 }
 
+.screenshot-float {
+	background-color: #ffffcc;
+}
+
+.screenshot-float img {
+	/* Scale to 4:3 aspect ratio */
+	width: 80px;
+	height: 60px;
+	cursor: pointer;
+}
+
+.screenshot-popup img {
+	/* Scale to 4:3 aspect ratio */
+	width: 640px;
+	height: 480px;
+}
+

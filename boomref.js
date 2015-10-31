@@ -29,9 +29,11 @@ function insertBasicFloat(floatClass, iconPath) {
 	var result = document.getElementById(divId);
 	result.classList.add("side-float", floatClass);
 
-	var icon = document.createElement("img");
-	icon.setAttribute("src", iconPath);
-	result.appendChild(icon);
+	if (iconPath != null) {
+		var icon = document.createElement("img");
+		icon.setAttribute("src", iconPath);
+		result.appendChild(icon);
+	}
 
 	return result;
 }
@@ -129,6 +131,29 @@ function insertInfoFloat(text) {
 	var result = insertBasicFloat("info-float", "infoicon.png");
 
 	result.appendChild(document.createTextNode(text));
+	return result;
+}
+
+function openScreenshotWindow(filename, text) {
+	var windowContents = document.createElement("div");
+	var screenshot = document.createElement("img");
+	screenshot.setAttribute("src", "screenshots/" + filename);
+	windowContents.appendChild(screenshot);
+
+	var win = new PopupWindow("screenshot-popup", "Screenshot",
+	                          windowContents);
+}
+
+function insertScreenshotFloat(filename, text) {
+	var result = insertBasicFloat("screenshot-float", null);
+	var thumbnail = document.createElement("img");
+	thumbnail.setAttribute("src", "screenshots/thumb/" + filename);
+	thumbnail.onclick = function() {
+		openScreenshotWindow(filename, text);
+	}
+	result.appendChild(thumbnail);
+	result.appendChild(document.createTextNode(
+		"Click to see a screenshot of " + text));
 	return result;
 }
 
