@@ -10,6 +10,11 @@
 	border-bottom: 2px solid #333;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
+	/* Pop-up window text is not selectable. */
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 .popup-window .title-bar {
@@ -31,6 +36,14 @@
 	border-top: 1px solid white;
 	border-right: 1px solid darkgrey;
 	border-bottom: 1px solid darkgrey;
+}
+
+/* Close button goes in when clicked */
+.popup-window .title-bar .close-button:active {
+	border-left: 1px solid darkgrey;
+	border-top: 1px solid darkgrey;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
 }
 
 .popup-window .popup-body {
