@@ -157,3 +157,10 @@ function insertScreenshotFloat(filename, text) {
 	return result;
 }
 
+function toggleProportional() {
+	var content = document.getElementById("content");
+	var prop = content.getAttribute("proportional") == "true";
+	content.setAttribute("proportional", !prop);
+	return true;
+}
+

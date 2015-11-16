@@ -55,3 +55,29 @@ a[name] {
 	height: 480px;
 }
 
+#content pre {
+	margin: 0;
+	margin-top: 1em;
+}
+
+#content p {
+	white-space: pre;
+	font-family: monospace;
+	margin: 0;
+}
+
+#content p[breakable="true"] {
+	margin-top: 1em;
+	white-space: normal;
+}
+
+#content[proportional="true"] p {
+	display: block;
+	white-space: normal;
+	font-family: serif;
+	text-align: justify;
+	width: 34em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
