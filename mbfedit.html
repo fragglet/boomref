@@ -55,10 +55,10 @@ Contents
 <script language="javascript">
   insertVideoFloat(VIDEO_SKY_WAD, "sky texture transfer", "3s");
 </script>
-<p breakable="true">
-<a name="ld271" href="#ld271">271</a>: Transfer first sidedef's upper texture to tagged sectors' skies<br>
-<a name="ld272" href="#ld272">272</a>: Same as 271, only flipped horizontally<br>
-</p>
+<pre>
+<a name="ld271" href="#ld271">271</a>: Transfer first sidedef's upper texture to tagged sectors' skies
+<a name="ld272" href="#ld272">272</a>: Same as 271, only flipped horizontally
+</pre>
 <p>
 These <a href="http://doomwiki.org/wiki/Linedef">linedefs</a> transfer wall textures to skies. F_SKY1 must still be used as
 the floor or ceiling texture in the <a href="http://doomwiki.org/wiki/Sector">sectors</a> for which sky is desired, but the
@@ -342,7 +342,7 @@ mnemonic, interpreting TRANSLATION to mean the same as TRANSLATION1.
 Several new code pointers have been added:
 </p>
 <p>
-A_Detonate is similar to A_Explode in that it generate a radius of explosion
+<a href="#A_Detonate" name="A_Detonate">A_Detonate</a> is similar to <a href="#A_Explode">A_Explode in that it generate a radius of explosion
 damage. However, instead of a fixed radius of 128, the radius is set by 
 changing the "missile damage" of the object being exploded. This allows
 explosion damage to be varied easily.
@@ -351,7 +351,7 @@ explosion damage to be varied easily.
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the A_Mushroom code pointer", "1m10s");
 </script>
 <p>
-A_Mushroom creates a mushroom-like explosion, throwing fireballs up in all
+<a href="#A_Mushroom" name="A_Mushroom">A_Mushroom</a> creates a mushroom-like explosion, throwing fireballs up in all
 directions. There is primary damage from the explosion itself, and then
 secondary damage from contact with the fireballs. The missile damage of the
 spawning object controls how many fireballs are created. Optionally, the
@@ -360,38 +360,38 @@ the angle and speed of the fireballs. These fields are fixed-point (16.16),
 instead of whole numbers.
 </p>
 <p>
-A_Spawn spawns an object in the same position as the spawner. The misc1 and
+<a href="#A_Spawn" name="A_Spawn">A_Spawn</a> spawns an object in the same position as the spawner. The misc1 and
 misc2 fields of the code pointer's frame (indicated by "Unknown 1" and 
 "Unknown 2" in DeHackEd), determine the type and z-position of the spawned
 object, respectively. Note that if the spawner and spawnee are both solid,
 they might stick together.
 </p>
 <p>
-A_Turn rotates the object's angle by the number of degrees indicated by the
+<a href="#A_Turn" name="A_Turn">A_Turn</a> rotates the object's angle by the number of degrees indicated by the
 misc1 ("Unknown 1") field.
 </p>
 <p>
-A_Face sets the object's angle to number of degrees in the misc1 ("Unknown 1")
+<a href="#A_Face" name="A_Face">A_Face</a> sets the object's angle to number of degrees in the misc1 ("Unknown 1")
 field.
 </p>
 <p>
-A_Scratch performs a melee (close-range) attack on the object's current target.
+<a href="#A_Scratch" name="A_Scratch">A_Scratch</a> performs a melee (close-range) attack on the object's current target.
 misc1 ("Unknown 1") indicates damage, while misc2 ("Unknown 2") indicates the
 sound effect to use.
 </p>
 <p>
-A_PlaySound plays a sound effect. misc1 ("Unknown 1") is the sound effect
+<a href="#A_PlaySound" name="A_PlaySound">A_PlaySound</a> plays a sound effect. misc1 ("Unknown 1") is the sound effect
 number, and misc2 ("Unknown 2"), if nonzero, makes the sound full-volume
 (like boss wakeup sounds).
 </p>
 <p>
-A_RandomJump jumps randomly to the state in misc1 ("Unknown 1") with a
+<a href="#A_RandomJump" name="A_RandomJump">A_RandomJump</a> jumps randomly to the state in misc1 ("Unknown 1") with a
 probability indicated by the misc2 ("Unknown 2") field (0-255). If the
 jump doesn't occur, then it falls through to the next state. Note that
 the frame's "tics" field must not be -1, for this to work correctly.
 </p>
 <p>
-A_LineEffect allows activation of remote linedef effects by objects. misc1
+<a href="#A_LineEffect" name="A_LineEffect">A_LineEffect</a> allows activation of remote linedef effects by objects. misc1
 ("Unknown 1") indicates the linedef type, while misc2 ("Unknown 2") indicates
 the sector tag. The tagged sector(s) are activated as though a player has
 activated a linedef of the indicated type and tag. If the linedef is a S1 or
@@ -402,7 +402,7 @@ object, no matter whether they are S1/W1 or SR/WR types.
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the A_Die code pointer", "1m40s");
 </script>
 <p>
-A_Die causes an object to kill itself (i.e. commit suicide). It is primarily
+<a href="#A_Die" name="A_Die">A_Die</a> causes an object to kill itself (i.e. commit suicide). It is primarily
 used to make countdown timers in grenades.
 </p>
 <pre>
