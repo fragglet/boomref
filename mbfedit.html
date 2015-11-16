@@ -20,25 +20,34 @@ that documents its extended editing features.
 This document links with several different videos that show the demo WADs
 included with MBF that show its features.
 <p>
+The document has been reformatted so that most of the text uses a proportional
+font, for readability. If you prefer to read in the original fixed-width font,
+<a href="javascript:toggleProportional();">click here</a>.
+<p>
 If you prefer, you can just read <a href="mbfedit.txt">the original
 mbfedit.txt</a> without any of the additions here.
 <p>
 
 <hr>
 
-<pre>
-Marine's Best Friend Editing Features
+<div id="content" proportional="true">
 
+<p>
+<b>Marine's Best Friend Editing Features</b>
+</p>
+<p>
 Contents
-
-1. <a href="#sec1">New Linedef Types</a>
-2. <a href="#sec2">New Thing Types / Flags</a>
-3. <a href="#sec3">New Mobj Flags</a>
-4. <a href="#sec4">DEH/BEX Mnemonic Names</a>
-5. <a href="#sec5">DEH/BEX Code Pointers</a>
-6. <a href="#sec6">DEHACKED lump</a>
+</p>
+<p breakable="true">
+1. <a href="#sec1">New Linedef Types</a><br>
+2. <a href="#sec2">New Thing Types / Flags</a><br>
+3. <a href="#sec3">New Mobj Flags</a><br>
+4. <a href="#sec4">DEH/BEX Mnemonic Names</a><br>
+5. <a href="#sec5">DEH/BEX Code Pointers</a><br>
+6. <a href="#sec6">DEHACKED lump</a><br>
 7. <a href="#sec7">OPTIONS lump</a>
-
+</p>
+<pre>
 -------------------------------------------------------------------------------
 
 <a name="sec1" href="#sec1">1. New Linedef Types</a>
@@ -46,37 +55,43 @@ Contents
 <script language="javascript">
   insertVideoFloat(VIDEO_SKY_WAD, "sky texture transfer", "3s");
 </script>
-<pre>
-<a name="ld271" href="#ld271">271</a>: Transfer first sidedef's upper texture to tagged sectors' skies
-<a name="ld272" href="#ld272">272</a>: Same as 271, only flipped horizontally
-
+<p breakable="true">
+<a name="ld271" href="#ld271">271</a>: Transfer first sidedef's upper texture to tagged sectors' skies<br>
+<a name="ld272" href="#ld272">272</a>: Same as 271, only flipped horizontally<br>
+</p>
+<p>
 These <a href="http://doomwiki.org/wiki/Linedef">linedefs</a> transfer wall textures to skies. F_SKY1 must still be used as
 the floor or ceiling texture in the <a href="http://doomwiki.org/wiki/Sector">sectors</a> for which sky is desired, but the
 presence of a 271 or 272 property-transfer linedef can change the sky texture
 to something other than a level-based default.
-
+</p>
+<p>
 Every sector with F_SKY1 floor or ceiling which shares the same sector tag
 as the 271 or 272 linedef will use a sky texture based on the upper texture
 of the first sidedef in the 271 or 272 linedef. Sectors with F_SKY1 floors or
 ceilings which are not tagged with 271 or 272 linedefs, behave just like Doom.
-
+</p>
+<p>
 Horizontal offsets or scrolling in the transferred texture, is converted into
 rotation of the sky texture. Vertical offsets or scrolling is transferred as
 well, allowing for precise adjustments of sky position. Unpegging in the sky
 transfer linedef does not affect the sky texture.
-
+</p>
+<p>
 Horizontal scrolling of the transferred upper wall texture is converted into
 rotation of the sky texture, but it occurs at a very slow speed relative to
 the moving texture, allowing for long-period rotations (such as one complete
 revolution per Doom real-time hour).
-
+</p>
+<p>
 Effects other than sky-transfer effects are not excluded from the affected
 sector(s), and tags can be shared so long as the effects are unambiguous. 
 For example, a wall-scrolling linedef can share a sector tag with both its
 affectee linedef (the one being scrolled), and with the sector that the
 latter controls. There is no ambiguity because one effect (scrolling) applies
 to a linedef, while the other effect (sky transfer) applies to a sector.
-
+</p>
+<p>
 If a sector underneath a special sky needs to be set up to have a different
 purpose (for example, if it is a lift or a stairbuilder), then two tags will
 need to be created, and the transfer linedef and any scrolling linedefs will
@@ -84,73 +99,93 @@ need to be duplicated as well, so that the same effect as far as the sky goes,
 is duplicated in two separate sector tags. This will not affect sky appearance,
 but it will allow a special sector which needs a unique tag, to sit under such
 a sky.
-
+</p>
+<p>
 Animated textures may be transferred to skies as well.
-
+</p>
+<p>
 In Doom, skies were flipped horizontally. To maintain compatibility with this
 practice, the 272 linedef flips the wall image horizontally. The 271 linedef
 does not flip the wall image, and it is intended to make it easier to take
 existing non-flipped wall textures and transfer them to skies.
-
+</p>
+<p>
 Sky textures which are different must be separated by non-sky textures, or
 else the results are undefined.
-
+</p>
+<p>
 sky.wad is an illustration of the sky effect.
-
+</p>
+<pre>
 -------------------------------------------------------------------------------
 
 <a name="sec2" href="#sec2">2. New Thing Types / Flags</a>
+</pre>
 
-There are a couple of new Thing types / flags:
+<p>
+There are a couple of new Thing types / flags:</p>
+<pre>
   A. <a href="#sec2a">Friendly monster flag</a>
   B. <a href="#sec2b">Reserved flag</a>
   C. <a href="#sec2c">Dogs</a>
+</pre>
 
+<pre>
 <a name="sec2a" href="#sec2a">2A. Friendly monster flag</a>
-
+</pre><p>
 At level startup, every object in a level's map is spawned with the <a href="#sec3a">FRIEND</a>
 mobj flag set if bit 7 (mask 128) is set in the <a href="http://doomwiki.org/wiki/Thing#Flags">Thing's flag bits</a>. This
 allows two of the same species in a map to be marked as being of a different
 persuasion. However, for various design reasons, if a thing is marked as being 
 friendly in its mobj definition, then it will always be friendly when spawned
 as a map object, regardless of the Thing's flags.
+</p>
 
+<p>
 So far, editor support for this feature is weak, but if a value >= 128 can
 be entered for a Thing's flags, then generally speaking, you only need to add 
 128 to the value to turn it into a friendly thing. Real players are always
 considered friendly, regardless of their Thing flags.
+</p>
 
+<pre>
 <a name="sec2b" href="#sec2b">2B. Reserved bit</a>
-
+</pre>
+<p>
 The <a href="http://doomwiki.org/wiki/Thing#Flags">thing flag bit</a> which is 8 positions left of the least significant bit, and
 which has a bitmask value of 256, is reserved to be 0. If this bit is not 0,
 then MBF will clear all bits which were unused by Doom, which effectively ANDs
 the flags with the value 31. This is to accomodate Doom wads edited by such
 editors as HellMaker, which put 1's inside bits that were unused in Doom.
-
+</p>
+<p>
 It is designed so that any thing flag bits added since Doom, should be cleared
 in order to get Doom behavior. With over 90% of Doom editors out there, unused
 (or simply unrecognized) thing flag bits are, by default, set to 0. But in
 HellMaker and maybe a few other editors, 1's are used, and with wads developed
 under these editors, we assume that the wad is strictly a Doom wad, and hence
 none of the flags added to the engine, post-Doom, should be set to '1'.
-</pre>
+</p>
 <script language="javascript">
   insertScreenshotFloat("mbf_dogs.png", "helper dogs as they appear in MBF.");
 </script>
 <pre>
 <a name="sec2c" href="#sec2c">2C. Dogs</a>
-
+</pre>
+<p>
 Dogs, which are mobj #140, have Doomednum 888 (i.e. Thing Type #888). They
 are not spawned as friendly dogs, unless explicitly marked as friendly by the
 friendly thing flag, or unless the entire species (140) is marked friendly.
 But this doesn't affect the normal spawning of dogs as friendly coop player
 replacements -- players or their bot replacements are always friends.
-
+</p>
+<p>
 Dogs have these lumps embedded inside the .exe, which can be modified by wads:
-
+</p>
+<p>
 DOGS* sprites with frames A-I (0-8).
-
+</p>
+<pre>
 SFX #   Lump    Description
 --------------------------------
  109  DSDGSIT   Waking up bark
@@ -158,12 +193,15 @@ SFX #   Lump    Description
  111  DSDGACT   Roaming bark
  112  DSDGDTH   Death sound
  113  DSDGPAIN  Pain sound
-
+</pre>
+<pre>
 -------------------------------------------------------------------------------
-
 <a name="sec3" href="#sec3">3. New Mobj Flags</a>
-
+</pre>
+<p>
 There are three new Map Object (mobj) flags in MBF:
+</p>
+<pre>
   A. <a href="#sec3a">FRIEND   (0x40000000)</a>
   B. <a href="#sec3b">BOUNCES  (0x20000000)</a>
   C. <a href="#sec3c">TOUCHY   (0x10000000)</a>
@@ -173,10 +211,12 @@ There are three new Map Object (mobj) flags in MBF:
 </script>
 <pre>
 <a name="sec3a" href="#sec3a">3A. FRIEND  (0x40000000)  Mobj Flag</a>
-
+</pre>
+<p>
 When the FRIEND mobj flag is set, a monster becomes the friend of the
 player(s), and tries to help them.
-
+</p>
+<p>
 Friendliness is a <a href="http://doomwiki.org/wiki/Mobj">Map Object</a> flag, not merely a <a href="http://doomwiki.org/wiki/Thing#Flags">Thing flag</a>, because a monster's
 friendliness can change during the game. For example, <a href="http://doomwiki.org/wiki/Arch-vile">Arch-Viles</a> transfer their
 good or evil intentions towards the player, to the victims they resurrect. A
@@ -184,110 +224,133 @@ friendly Arch-Vile turns corpses into new friends, no matter what their motives
 were when they died, and an unfriendly Arch-Vile turns them into player
 enemies. <a href="http://doomwiki.org/wiki/Monster_spawner">Boss Spawners</a> spawn monsters with the same friendliness as themselves.
 <a href="http://doomwiki.org/wiki/Pain_elemental">Pain Elementals</a> spawn <a href="http://doomwiki.org/wiki/Lost_soul">Lost Souls</a> with the same motives.
-
+</p>
+<p>
 Friendly monsters with long-range missile capability (missilestates) fire back
 only one shot each time they receive a painful hit from a friend such as the
 player (monsters with automatic weapons fire back a short burst). Friendly
 monsters without long-range missile capability do not retaliate when hit by
 friendly fire.
-
+</p>
+<p>
 Friendly monsters return to a player if they cannot find any enemy targets, or
 if they lack long-range firing capability and they cannot seem to attack any
 opponent for a significant period of time.
-
+</p>
+<p>
 Player <a href="http://doomwiki.org/wiki/Autoaim">autoaiming</a> does not fire at friends if there are any enemies within
 autoaiming range. This avoids accidental shooting of friends by the player,
 but does not rule out shooting friends if they are the only ones in sight
 or they are the obvious target.
-</pre>
+</p>
 <script language="javascript">
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the BOUNCES flag", "1m55s");
 </script>
 <pre>
 <a name="sec3b" href="#sec3b">3B. BOUNCES  (0x20000000)  Mobj Flag</a>
-
+</pre>
+<p>
 The BOUNCES mobj flag tells MBF that an object is "bouncy". What this means
 exactly, depends on the rest of the flags:
-
+</p>
+<p>
 BOUNCES + MISSILE:
-
+</p>
+<p>
 With BOUNCES + MISSILE, the object behaves like a beta BFG fireball, exploding
 on contact with walls and with non-inert objects, but bouncing off of floors
 and ceilings. See the "Classic BFG" for an example of this flags combination.
-
+</p>
+<p>
 BOUNCES + NOGRAVITY:
-
+</p>
+<p>
 Unless it's a MISSILE too, the object generally bounces off of all surfaces
 without loss of momentum.
-
+</p>
+<p>
 BOUNCES + FLOAT:
-
+</p>
+<p>
 Without NOGRAVITY, BOUNCES + FLOAT gives the ability for a monster to jump
 when it needs to reach a high target, but to otherwise stay pretty low. See
 dogfly.deh for an example of this flags combination.
-
+</p>
+<p>
 For non-sentient objects, BOUNCES + FLOAT simply creates a higher bounce back.
-
+</p>
+<p>
 BOUNCES + FLOAT + DROPOFF bounces back even higher than BOUNCES + FLOAT.
-
+</p>
+<p>
 BOUNCES:
-
+</p>
+<p>
 When BOUNCES isn't combined with MISSILE, it causes the object to simply bounce
 off of floors and walls. If the object is under gravity (the NOGRAVITY flag is
 not set), then its momentum is cut in half at each collision, in the component
 of momentum which is perpendicular to the contacted surface. The object also
 rolls up and down stairs, if under gravity. This flags combination is
 illustrated in grenade.deh.
-</pre>
+</p>
 <script language="javascript">
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the TOUCHY flag", "1m0s");
 </script>
 <pre>
 <a name="sec3c" href="#sec3c">3C. TOUCHY  (0x10000000)  Mobj Flag</a>
-
+</pre>
+<p>
 TOUCHY indicates that an object dies (or explodes) upon contact with a solid
 object of a different species. It is used mainly to create mines which detonate
 on contact (see mine.deh for an example). Other normal causes of death are not
 ruled out, however, by the TOUCHY flag.
-
+</p>
+<p>
 <a href="http://doomwiki.org/wiki/Pain_elemental">Pain Elementals</a> and <a href="http://doomwiki.org/wiki/Lost_soul">Lost Souls</a> are considered part of the same species for the
 purposes of dying by touch (but <a href="http://doomwiki.org/wiki/Baron_of_hell">Barons</a> and <a href="http://doomwiki.org/wiki/Hell_knight">Hell Knights</a> are not), because if
 this weren't true, PEs and LSes would die almost immediately. (Also, a touchy
 PE guarded by a flock of LSes has a nice ring to it :)
-
+</p>
+<p>
 Different players are considered different species, so DM by touch is possible,
 and suicide by touch is possible with voodoo dolls.
-
+</p>
+<pre>
 -------------------------------------------------------------------------------
 
 <a name="sec4" href="#sec4">4. DEH/BEX Mnemonic Names</a>
-
+</pre>
+<p>
 FRIEND, BOUNCES, and TOUCHY are allowed as DEH/BEX mnemonics for flags. In MBF,
 the mnemonics may be arbitrarily separated by + (plus) | (vertical bar) or , 
 (comma), as well as optional whitespace. Values are ORed, which means listing
 a flag multiple times is the same as listing it once.
-
+</p>
+<p>
 TRANSLATION1 and TRANSLATION2 are also allowed as DEH/BEX mnemonics, and are
 suggested replacements for the Boom TRANSLATION mnemonic. TRANSLATION1 selects
 the least significant bit of the color translation, while TRANSLATION2 selects
 the most significant bit. MBF is bug-compatibile with Boom's TRANSLATION
 mnemonic, interpreting TRANSLATION to mean the same as TRANSLATION1.
-
+</p>
+<pre>
 -------------------------------------------------------------------------------
 
 <a name="sec5" href="#sec5">5. DEH/BEX Code Pointers</a>
-
+</pre>
+<p>
 Several new code pointers have been added:
-
+</p>
+<p>
 A_Detonate is similar to A_Explode in that it generate a radius of explosion
 damage. However, instead of a fixed radius of 128, the radius is set by 
 changing the "missile damage" of the object being exploded. This allows
 explosion damage to be varied easily.
-</pre>
+</p>
 <script language="javascript">
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the A_Mushroom code pointer", "1m10s");
 </script>
-<pre>
+<p>
 A_Mushroom creates a mushroom-like explosion, throwing fireballs up in all
 directions. There is primary damage from the explosion itself, and then
 secondary damage from contact with the fireballs. The missile damage of the
@@ -295,99 +358,125 @@ spawning object controls how many fireballs are created. Optionally, the
 misc1 ("Unknown 1") and misc2 ("Unknown 2") fields may be used to control
 the angle and speed of the fireballs. These fields are fixed-point (16.16),
 instead of whole numbers.
-
+</p>
+<p>
 A_Spawn spawns an object in the same position as the spawner. The misc1 and
 misc2 fields of the code pointer's frame (indicated by "Unknown 1" and 
 "Unknown 2" in DeHackEd), determine the type and z-position of the spawned
 object, respectively. Note that if the spawner and spawnee are both solid,
 they might stick together.
-
+</p>
+<p>
 A_Turn rotates the object's angle by the number of degrees indicated by the
 misc1 ("Unknown 1") field.
-
+</p>
+<p>
 A_Face sets the object's angle to number of degrees in the misc1 ("Unknown 1")
 field.
-
+</p>
+<p>
 A_Scratch performs a melee (close-range) attack on the object's current target.
 misc1 ("Unknown 1") indicates damage, while misc2 ("Unknown 2") indicates the
 sound effect to use.
-
+</p>
+<p>
 A_PlaySound plays a sound effect. misc1 ("Unknown 1") is the sound effect
 number, and misc2 ("Unknown 2"), if nonzero, makes the sound full-volume
 (like boss wakeup sounds).
-
+</p>
+<p>
 A_RandomJump jumps randomly to the state in misc1 ("Unknown 1") with a
 probability indicated by the misc2 ("Unknown 2") field (0-255). If the
 jump doesn't occur, then it falls through to the next state. Note that
 the frame's "tics" field must not be -1, for this to work correctly.
-
+</p>
+<p>
 A_LineEffect allows activation of remote linedef effects by objects. misc1
 ("Unknown 1") indicates the linedef type, while misc2 ("Unknown 2") indicates
 the sector tag. The tagged sector(s) are activated as though a player has
 activated a linedef of the indicated type and tag. If the linedef is a S1 or
 W1 type, then the effect blocks out all further A_LineEffect effects for the
 object, no matter whether they are S1/W1 or SR/WR types.
-</pre>
+</p>
 <script language="javascript">
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the A_Die code pointer", "1m40s");
 </script>
-<pre>
+<p>
 A_Die causes an object to kill itself (i.e. commit suicide). It is primarily
 used to make countdown timers in grenades.
-
+</p>
+<pre>
 -------------------------------------------------------------------------------
 
 <a name="sec6" href="#sec6">6. DEHACKED lump</a>
-
+</pre>
+<p>
 The DEHACKED lump allows <a href="http://doomwiki.org/wiki/DeHackEd">.deh</a>/<a href="http://doomwiki.org/wiki/BEX">.bex</a> files to be embedded inside of wads. If 
 there are multiple wads with DEHACKED lumps, or even multiple DEHACKED lumps
 inside the same wad, then the last wad or lump which is read, has priority
 where there is a conflict. However, the presence of a DEHACKED lump doesn't
 completely invalidate previous DEHACKED lumps -- the effects are cumulative,
 although later deh files can undo the effects of earlier ones.
-
+</p>
+<p>
 The order in which .deh/.bex files are read and interpreted is:
-
-1. .deh/.bex files listed on the command-line 
-2. .wad files listed on the command-line with DEHACKED lumps
-3. Preincluded .wad files with DEHACKED lumps
+</p>
+<p breakable="true">
+1. .deh/.bex files listed on the command-line<br>
+2. .wad files listed on the command-line with DEHACKED lump<br>
+3. Preincluded .wad files with DEHACKED lump<br>
 4. Preincluded .deh/.bex files (in General menu)
-
+</p>
+<p>
 DEHACKED lumps should consist of ordinary .deh/.bex file text.
-
+</p>
+<p>
 Include directives are not allowed inside DEHACKED lumps, since the whole
 purpose of DEHACKED lumps is to be entirely self-contained within a wad.
-
+</p>
+<pre>
 -------------------------------------------------------------------------------
 
 <a name="sec7" href="#sec7">7. OPTIONS lump</a>
-
+</pre>
+<p>
 The OPTIONS lump allows wads to set game options, such as Doom Compatibility
 options, chat strings, and enemies options.
-
+</p>
+<p>
 The OPTIONS lump has the same format as mbf.cfg: A text file listing option
 names and values, optionally separated by blank or comment lines. mbf.cfg
 indicates options which are allowed to be set in wads, with asterisks (*).
-
+</p>
+<p>
 When OPTIONS are set from wads, they are skipped on the menu screens.
-
+</p>
+<p>
 Wad authors are urged to use these options responsibly, because they should
 not be used to limit players, but to enhance the game. Many options such as
 automap colors are allowed to be set from wads, but they should only be done
 so if there are strong reasons to do so.
-
+</p>
+<p>
 Players who are offended by wads setting certain options for them, should ask
 wad authors not to set them, or should consider playing other wads. As a last
 resort, players can use Deutex/Wintex/NWT/etc. to remove or modify the OPTIONS
 lump themselves. They can also create a dummy wad with its own OPTIONS lump,
 which completely replaces any OPTIONS set in wads. An OPTIONS lump with nothing
 but blanks or comments, can be used to effectively nullify earlier ones.
-
+</p>
+<p>
 Some options must be set in wads for compatibility reasons (otherwise the
 wad may not work and the player might even get stuck in a level), while many 
 options are not necessary for compatibility.
+</p>
+<pre>
 
 -------------------------------------------------------------------------------
 Lee Killough                                            Last Updated 12/21/1998
 </pre>
+</div>
+
+</body>
+</html>
 
