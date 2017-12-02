@@ -35,7 +35,7 @@ PopupWindow.prototype = {
 	createCloseButton: function() {
 		var result = document.createElement("div");
 		result.classList.add("close-button");
-		result.appendChild(document.createTextNode("X"));
+		result.appendChild(document.createTextNode("\u2715"));
 		var popup = this;
 		result.onclick = function() {
 			popup.close();
