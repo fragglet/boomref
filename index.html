@@ -1721,13 +1721,13 @@ filters to be used in different parts of the same maps. If the first side's
 normal texture is not a valid translucency filter lump name, it must be a
 valid texture name, and will be displayed as such on this linedef.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "type 242 property transfer", "1m40s");
-</script>
 <pre>
 <a name="ld242" href="#ld242">242</a>   Ext --   Set Tagged Lighting, Flats Heights to 1st Sidedef's Sector,
                and set <a href="https://doomwiki.org/wiki/COLORMAP">colormap</a> based on sidedef textures.
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "type 242 property transfer", "1m40s");
+</script>
 <p>
 This allows the tagged sector to have two levels -- an actual floor and 
 ceiling, and another floor or ceiling where more flats are rendered. Things
@@ -1867,12 +1867,12 @@ pwads.
 <p>
 Ceiling bleeding may occur if required upper textures are not used.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "friction effects", "5m8s");
-</script>
 <pre>
 <a name="ld223" href="#ld223">223</a>   Ext --   Length Sets Friction in tagged Sector,Sludge&lt;100, Ice&gt;100
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "friction effects", "5m8s");
+</script>
 <p>
 The length of the linedef with type 223 controls the amount of friction
 experienced by the player in the tagged sector, when in contact with the
@@ -1882,16 +1882,16 @@ sector when its friction enable bit (<a href="#sec15-bit8">bit 8</a>) in the sec
 This allows the flat to be changed in conjunction with turning the effect
 on or off thru texture/type changes.
 </p>
+<pre>
+<a name="ld271" href="#ld271">271</a>   Ext --   Transfer sky texture to tagged sectors 
+<a name="ld272" href="#ld272">272</a>   Ext --   Transfer sky texture to tagged sectors, flipped
+</pre>
 <script language="javascript">
   insertInfoFloat("Linedef types 271 and 272 were added in MBF, and are " +
                   "not supported in Boom. This text is from MBF's version " +
 		  "of boomref.txt.");
   insertVideoFloat(VIDEO_SKY_WAD, "sky texture transfer", "3s");
 </script>
-<pre>
-<a name="ld271" href="#ld271">271</a>   Ext --   Transfer sky texture to tagged sectors 
-<a name="ld272" href="#ld272">272</a>   Ext --   Transfer sky texture to tagged sectors, flipped
-</pre>
 <p>
 These linedefs transfer wall textures to skies. F_SKY1 must still be used as
 the floor or ceiling texture in the sectors for which sky is desired, but the
@@ -1981,12 +1981,12 @@ pushers.
 
 
 <a name="ld225" href="#ld225">225</a>  Ext  --   Length/Direction Sets Current Force in tagged Sectors</pre>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "point pushers", "5m38s");
-</script>
 <pre>
 <a name="sec11-pp" href="#sec11-pp">Point pushers</a>
 -------------</pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "point pushers", "5m38s");
+</script>
 <p>Two types of point pushers are available, push and pull.</p>
 <p>
 The previous implementation of these was SECTOR-SPECIFIC. The new
@@ -2019,13 +2019,13 @@ pushers.
 ###########################################
 <a name="sec12" href="#sec12">Section 12 Scrolling Walls, Flats, Objects</a>
 ###########################################</pre>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "static scrollers", "0m0s");
-</script>
 <pre>
 
 <a name="sec12-static" href="#sec12-static">Static Scrollers</a>
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "static scrollers", "0m0s");
+</script>
 <p>
 The most basic kind of scrolling linedef causes some part of the tagged
 <a href="https://doomwiki.org/wiki/Sector">sector</a> or tagged wall to scroll, in proportion to the length of the
@@ -2086,13 +2086,13 @@ length of the component parallel to the wall sets the horizontal
 scroll rate, the length of the component perpendicular to the wall
 sets the vertical scroll rate.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "simple static scrollers", "1m26s");
-</script>
 <pre>
 
 <a name="sec12-simple" href="#sec12-simple">Simple Static Scrollers</a>
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "simple static scrollers", "1m26s");
+</script>
 <p>
 For convenience three simpler static scroll functions are provided
 for when you just need a wall to scroll and don't need to control its
@@ -2141,12 +2141,12 @@ floor and ceiling heights.
 All scroll effects are additive, and thus two or more effects may
 reinforce and/or cancel each other.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "displacement scrollers", "0m16s");
-</script>
 <pre>
 <a name="sec12-displace" href="#sec12-displace">Displacement Scrollers</a>
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "displacement scrollers", "0m16s");
+</script>
 <p>
 In the first kind, displacement scrolling, the position of the scrolled
 objects or walls changes proportionally to the motion of the floor or
@@ -2212,13 +2212,13 @@ the wall sets the vertical scroll displacement. The distance scrolled
 is the controlling sector's height change times the trigger length,
 divided by 32.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "accelerative scrollers", "0m42s");
-</script>
 <pre>
 
 <a name="sec12-accel" href="#sec12-accel">Accelerative Scrollers</a>
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "accelerative scrollers", "0m42s");
+</script>
 <p>
 The second kind of dynamic scrollers, accelerative scrollers, also
 react to height changes in the sector on the first <a href="https://doomwiki.org/wiki/Sidedef">sidedef</a> of the
@@ -2828,14 +2828,14 @@ sound control. Bit 10 will suppress all sounds within the sector,
 while bit 11 will disable any sounds due to floor or ceiling motion
 by the sector.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "the PassThru flag", "3m6s");
-</script>
 <pre>
 ======================================================================
                         <a name="p3" href="#p3">Part III Linedef Flags</a>
 ======================================================================
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_BOOMEDIT_WAD, "the PassThru flag", "3m6s");
+</script>
 <p>
 Only one new <a href="https://doomwiki.org/wiki/Linedef_flag">linedef flag</a> is implemented, called PassThru, which
 allows a push or switch linedef trigger to pass the push action thru
@@ -3064,15 +3064,15 @@ generate both the SWITCHES and ANIMATED lumps from a text file. An
 example is provided, DEFSWANI.DAT that generates the standard set of
 switches and animations for DOOM.
 </p>
-<script language="javascript">
-  insertScreenshotFloat("watermap.png",
-                        "the WATERMAP colormap as it appears in use.");
-</script>
 <pre>
 Colormaps
 ---------
 WATERMAP       Custom greenish colormap for underwater use
 </pre>
+<script language="javascript">
+  insertScreenshotFloat("watermap.png",
+                        "the WATERMAP colormap as it appears in use.");
+</script>
 <p>
 The WATERMAP lump has the same format as COLORMAP, 34 tables of 256
 bytes each, see the <a href="https://doomwiki.org/wiki/Unofficial_Doom_Specs">UDS</a> for details. Note that colormaps you add to
