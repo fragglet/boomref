@@ -36,7 +36,7 @@
 <h1>HTML MBF reference</h1>
 
 This is the same thing as the <a href="index.html">HTML Boom reference</a>,
-but for <a href="http://doomwiki.org/wiki/MBF">MBF</a>'s MBFEDIT.TXT file
+but for <a href="https://doomwiki.org/wiki/MBF">MBF</a>'s MBFEDIT.TXT file
 that documents its extended editing features.
 This document links with several different videos that show the demo WADs
 included with MBF that show its features.
@@ -81,8 +81,8 @@ Contents
 <a name="ld272" href="#ld272">272</a>: Same as 271, only flipped horizontally
 </pre>
 <p>
-These <a href="http://doomwiki.org/wiki/Linedef">linedefs</a> transfer wall textures to skies. F_SKY1 must still be used as
-the floor or ceiling texture in the <a href="http://doomwiki.org/wiki/Sector">sectors</a> for which sky is desired, but the
+These <a href="https://doomwiki.org/wiki/Linedef">linedefs</a> transfer wall textures to skies. F_SKY1 must still be used as
+the floor or ceiling texture in the <a href="https://doomwiki.org/wiki/Sector">sectors</a> for which sky is desired, but the
 presence of a 271 or 272 property-transfer linedef can change the sky texture
 to something other than a level-based default.
 </p>
@@ -158,7 +158,7 @@ There are a couple of new Thing types / flags:</p>
 <a name="sec2a" href="#sec2a">2A. Friendly monster flag</a>
 </pre><p>
 At level startup, every object in a level's map is spawned with the <a href="#sec3a">FRIEND</a>
-mobj flag set if bit 7 (mask 128) is set in the <a href="http://doomwiki.org/wiki/Thing#Flags">Thing's flag bits</a>. This
+mobj flag set if bit 7 (mask 128) is set in the <a href="https://doomwiki.org/wiki/Thing#Flags">Thing's flag bits</a>. This
 allows two of the same species in a map to be marked as being of a different
 persuasion. However, for various design reasons, if a thing is marked as being 
 friendly in its mobj definition, then it will always be friendly when spawned
@@ -176,7 +176,7 @@ considered friendly, regardless of their Thing flags.
 <a name="sec2b" href="#sec2b">2B. Reserved bit</a>
 </pre>
 <p>
-The <a href="http://doomwiki.org/wiki/Thing#Flags">thing flag bit</a> which is 8 positions left of the least significant bit, and
+The <a href="https://doomwiki.org/wiki/Thing#Flags">thing flag bit</a> which is 8 positions left of the least significant bit, and
 which has a bitmask value of 256, is reserved to be 0. If this bit is not 0,
 then MBF will clear all bits which were unused by Doom, which effectively ANDs
 the flags with the value 31. This is to accomodate Doom wads edited by such
@@ -241,13 +241,13 @@ When the FRIEND mobj flag is set, a monster becomes the friend of the
 player(s), and tries to help them.
 </p>
 <p>
-Friendliness is a <a href="http://doomwiki.org/wiki/Mobj">Map Object</a> flag, not merely a <a href="http://doomwiki.org/wiki/Thing#Flags">Thing flag</a>, because a monster's
-friendliness can change during the game. For example, <a href="http://doomwiki.org/wiki/Arch-vile">Arch-Viles</a> transfer their
+Friendliness is a <a href="https://doomwiki.org/wiki/Mobj">Map Object</a> flag, not merely a <a href="https://doomwiki.org/wiki/Thing#Flags">Thing flag</a>, because a monster's
+friendliness can change during the game. For example, <a href="https://doomwiki.org/wiki/Arch-vile">Arch-Viles</a> transfer their
 good or evil intentions towards the player, to the victims they resurrect. A
 friendly Arch-Vile turns corpses into new friends, no matter what their motives
 were when they died, and an unfriendly Arch-Vile turns them into player
-enemies. <a href="http://doomwiki.org/wiki/Monster_spawner">Boss Spawners</a> spawn monsters with the same friendliness as themselves.
-<a href="http://doomwiki.org/wiki/Pain_elemental">Pain Elementals</a> spawn <a href="http://doomwiki.org/wiki/Lost_soul">Lost Souls</a> with the same motives.
+enemies. <a href="https://doomwiki.org/wiki/Monster_spawner">Boss Spawners</a> spawn monsters with the same friendliness as themselves.
+<a href="https://doomwiki.org/wiki/Pain_elemental">Pain Elementals</a> spawn <a href="https://doomwiki.org/wiki/Lost_soul">Lost Souls</a> with the same motives.
 </p>
 <p>
 Friendly monsters with long-range missile capability (missilestates) fire back
@@ -262,7 +262,7 @@ if they lack long-range firing capability and they cannot seem to attack any
 opponent for a significant period of time.
 </p>
 <p>
-Player <a href="http://doomwiki.org/wiki/Autoaim">autoaiming</a> does not fire at friends if there are any enemies within
+Player <a href="https://doomwiki.org/wiki/Autoaim">autoaiming</a> does not fire at friends if there are any enemies within
 autoaiming range. This avoids accidental shooting of friends by the player,
 but does not rule out shooting friends if they are the only ones in sight
 or they are the obvious target.
@@ -330,8 +330,8 @@ on contact (see mine.deh for an example). Other normal causes of death are not
 ruled out, however, by the TOUCHY flag.
 </p>
 <p>
-<a href="http://doomwiki.org/wiki/Pain_elemental">Pain Elementals</a> and <a href="http://doomwiki.org/wiki/Lost_soul">Lost Souls</a> are considered part of the same species for the
-purposes of dying by touch (but <a href="http://doomwiki.org/wiki/Baron_of_hell">Barons</a> and <a href="http://doomwiki.org/wiki/Hell_knight">Hell Knights</a> are not), because if
+<a href="https://doomwiki.org/wiki/Pain_elemental">Pain Elementals</a> and <a href="https://doomwiki.org/wiki/Lost_soul">Lost Souls</a> are considered part of the same species for the
+purposes of dying by touch (but <a href="https://doomwiki.org/wiki/Baron_of_hell">Barons</a> and <a href="https://doomwiki.org/wiki/Hell_knight">Hell Knights</a> are not), because if
 this weren't true, PEs and LSes would die almost immediately. (Also, a touchy
 PE guarded by a flock of LSes has a nice ring to it :)
 </p>
@@ -435,7 +435,7 @@ used to make countdown timers in grenades.
 <a name="sec6" href="#sec6">6. DEHACKED lump</a>
 </pre>
 <p>
-The DEHACKED lump allows <a href="http://doomwiki.org/wiki/DeHackEd">.deh</a>/<a href="http://doomwiki.org/wiki/BEX">.bex</a> files to be embedded inside of wads. If 
+The DEHACKED lump allows <a href="https://doomwiki.org/wiki/DeHackEd">.deh</a>/<a href="https://doomwiki.org/wiki/BEX">.bex</a> files to be embedded inside of wads. If 
 there are multiple wads with DEHACKED lumps, or even multiple DEHACKED lumps
 inside the same wad, then the last wad or lump which is read, has priority
 where there is a conflict. However, the presence of a DEHACKED lump doesn't
