@@ -73,13 +73,13 @@ Contents
 
 <a name="sec1" href="#sec1">1. New Linedef Types</a>
 </pre>
-<script language="javascript">
-  insertVideoFloat(VIDEO_SKY_WAD, "sky texture transfer", "3s");
-</script>
 <pre>
 <a name="ld271" href="#ld271">271</a>: Transfer first sidedef's upper texture to tagged sectors' skies
 <a name="ld272" href="#ld272">272</a>: Same as 271, only flipped horizontally
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_SKY_WAD, "sky texture transfer", "3s");
+</script>
 <p>
 These <a href="https://doomwiki.org/wiki/Linedef">linedefs</a> transfer wall textures to skies. F_SKY1 must still be used as
 the floor or ceiling texture in the <a href="https://doomwiki.org/wiki/Sector">sectors</a> for which sky is desired, but the
@@ -130,13 +130,13 @@ practice, the 272 linedef flips the wall image horizontally. The 271 linedef
 does not flip the wall image, and it is intended to make it easier to take
 existing non-flipped wall textures and transfer them to skies.
 </p>
+<script language="javascript">
+  insertVideoFloat(VIDEO_SKY_WAD, "sky.wad", "3s");
+</script>
 <p>
 Sky textures which are different must be separated by non-sky textures, or
 else the results are undefined.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_SKY_WAD, "sky.wad", "3s");
-</script>
 <p>
 sky.wad is an illustration of the sky effect.
 </p>
@@ -190,12 +190,12 @@ HellMaker and maybe a few other editors, 1's are used, and with wads developed
 under these editors, we assume that the wad is strictly a Doom wad, and hence
 none of the flags added to the engine, post-Doom, should be set to '1'.
 </p>
-<script language="javascript">
-  insertScreenshotFloat("mbf_dogs.png", "helper dogs as they appear in MBF.");
-</script>
 <pre>
 <a name="sec2c" href="#sec2c">2C. Dogs</a>
 </pre>
+<script language="javascript">
+  insertScreenshotFloat("mbf_dogs.png", "helper dogs as they appear in MBF.");
+</script>
 <p>
 Dogs, which are mobj #140, have Doomednum 888 (i.e. Thing Type #888). They
 are not spawned as friendly dogs, unless explicitly marked as friendly by the
@@ -230,12 +230,12 @@ There are three new Map Object (mobj) flags in MBF:
   B. <a href="#sec3b">BOUNCES  (0x20000000)</a>
   C. <a href="#sec3c">TOUCHY   (0x10000000)</a>
 </pre>
-<script language="javascript">
-  insertVideoFloat(VIDEO_HOCKEY_WAD, "the FRIEND flag", "3s");
-</script>
 <pre>
 <a name="sec3a" href="#sec3a">3A. FRIEND  (0x40000000)  Mobj Flag</a>
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_HOCKEY_WAD, "the FRIEND flag", "3s");
+</script>
 <p>
 When the FRIEND mobj flag is set, a monster becomes the friend of the
 player(s), and tries to help them.
@@ -267,12 +267,12 @@ autoaiming range. This avoids accidental shooting of friends by the player,
 but does not rule out shooting friends if they are the only ones in sight
 or they are the obvious target.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_MBFEDIT_WAD, "the BOUNCES flag", "1m55s");
-</script>
 <pre>
 <a name="sec3b" href="#sec3b">3B. BOUNCES  (0x20000000)  Mobj Flag</a>
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_MBFEDIT_WAD, "the BOUNCES flag", "1m55s");
+</script>
 <p>
 The BOUNCES mobj flag tells MBF that an object is "bouncy". What this means
 exactly, depends on the rest of the flags:
@@ -317,12 +317,12 @@ of momentum which is perpendicular to the contacted surface. The object also
 rolls up and down stairs, if under gravity. This flags combination is
 illustrated in grenade.deh.
 </p>
-<script language="javascript">
-  insertVideoFloat(VIDEO_MBFEDIT_WAD, "the TOUCHY flag", "1m0s");
-</script>
 <pre>
 <a name="sec3c" href="#sec3c">3C. TOUCHY  (0x10000000)  Mobj Flag</a>
 </pre>
+<script language="javascript">
+  insertVideoFloat(VIDEO_MBFEDIT_WAD, "the TOUCHY flag", "1m0s");
+</script>
 <p>
 TOUCHY indicates that an object dies (or explodes) upon contact with a solid
 object of a different species. It is used mainly to create mines which detonate
