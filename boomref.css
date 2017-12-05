@@ -1,3 +1,7 @@
+body {
+	margin-left: 50px;
+}
+
 /* Anchor tags are not links as such, so make them more subtle. */
 a[name] {
 	color: black;
@@ -13,6 +17,7 @@ a[name] {
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	margin-left: 1.5em;
+	margin-right: 40px;
 	position: relative;
 	z-index: 10;
 }
@@ -84,8 +89,35 @@ a[name] {
 	white-space: normal;
 	font-family: serif;
 	text-align: justify;
-	width: 34em;
+	width: 36em;
 	margin-top: 1em;
 	margin-bottom: 1em;
+}
+
+hr {
+	width: 650px;
+	margin: 0;
+}
+
+#intro {
+	width: 650px;
+	text-align: justify;
+}
+
+/* For small screen sizes, adjust margins to be smaller */
+@media screen and (max-width: 799px) {
+	#intro {
+		width: 90%;
+	}
+	hr {
+		width: 90%;
+	}
+	body {
+		margin-left: 10px;
+	}
+	.side-float {
+		margin-right: 5px;
+		width: 18em;
+	}
 }
 
