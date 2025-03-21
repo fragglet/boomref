@@ -158,18 +158,21 @@ Calculator.prototype = {
 		hexDiv.appendChild(document.createTextNode("Hex"));
 
 		var inputBox = document.createElement("input");
-		inputBox.setAttribute("type", "text");
+		inputBox.setAttribute("type", "number");
 		result.appendChild(inputBox);
 
 		var calc = this;
 		// Change to controls updates result box
 		function valueChanged() {
-			var value;
+			var value, inputType;
 			if (hexControl.checked) {
 				value = "0x" + calc.getValue().toString(16);
+				inputType = "text";
 			} else {
 				value = calc.getValue().toString();
+				inputType = "number";
 			}
+			inputBox.setAttribute("type", inputType);
 			inputBox.value = value;
 		}
 		this.onChange = valueChanged;
