@@ -1,3 +1,3 @@
 HTML hyperlinked and interactive version of BOOMREF.TXT.
-[See here](https://soulsphere.org/projects/boomref/) for the live
+[See here](https://boomref.soulsphere.org/) for the live
 online version.
