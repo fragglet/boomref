@@ -1786,6 +1786,8 @@ valid texture name, and will be displayed as such on this linedef.
                and set <a href="https://doomwiki.org/wiki/COLORMAP">colormap</a> based on sidedef textures.
 </pre>
 <script language="javascript">
+  insertInfoFloat("The main use of linedef 242 is to create deep water "+
+                  "sectors, but it has other uses such as invisible floors.");
   insertVideoFloat(VIDEO_BOOMEDIT_WAD, "type 242 property transfer", "1m40s");
 </script>
 <p>
@@ -1827,6 +1829,12 @@ can be over the player's head.
 Boom sectors controlled by a 242 linedef are partitioned into 3 spaces.
 The viewer's xyz coordinates uniquely determine which space they are in.
 </p>
+<script language="javascript">
+  insertIllustrationFloat("submerged.png",
+                          "Partially \"submerged\" objects are clipped "+
+                          "properly against the floor by Boom, as seen "+
+                          "here.");
+</script>
 <p>
 If they are in space B (normal space), then the floor and ceiling textures
 and lightlevel from the real sector are used, and the colormap from the 242
@@ -1949,7 +1957,7 @@ on or off thru texture/type changes.
 <script language="javascript">
   insertInfoFloat("Linedef types 271 and 272 were added in MBF, and are " +
                   "not supported in Boom. This text is from MBF's version " +
-		  "of boomref.txt.");
+                  "of boomref.txt.");
   insertVideoFloat(VIDEO_SKY_WAD, "sky texture transfer", "3s");
 </script>
 <p>
