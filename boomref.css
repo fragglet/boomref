@@ -105,6 +105,28 @@ pre,tt {
 	margin-bottom: 1em;
 }
 
+#content[proportional="true"] .l1-header {
+	font-family: 'Varta', 'Helvetica', 'Arial', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#content[proportional="true"] .l2-header {
+	font-family: 'Varta', 'Helvetica', 'Arial', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#content[proportional="true"] .l3-header {
+	font-family: 'Varta', 'Helvetica', 'Arial', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#content[proportional="true"] .fixed-only {
+	display: none;
+}
+
 hr {
 	width: 650px;
 	margin: 0;
