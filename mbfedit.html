@@ -55,8 +55,8 @@ mbfedit.txt</a> without any of the additions here.
 
 <div id="content" proportional="true">
 
-<p>
-<b>Marine's Best Friend Editing Features</b>
+<p class="l1-header">
+Marine's Best Friend Editing Features
 </p>
 <p>
 Contents
@@ -71,11 +71,10 @@ Contents
 7. <a href="#sec7">OPTIONS lump</a>
 </p>
 <pre>
--------------------------------------------------------------------------------
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
 
-<a name="sec1" href="#sec1">1. New Linedef Types</a>
-</pre>
-<pre>
+<a class="l2-header" name="sec1" href="#sec1">1. New Linedef Types</a>
+
 <a name="ld271" href="#ld271">271</a>: Transfer first sidedef's upper texture to tagged sectors' skies
 <a name="ld272" href="#ld272">272</a>: Same as 271, only flipped horizontally
 </pre>
@@ -143,9 +142,9 @@ else the results are undefined.
 sky.wad is an illustration of the sky effect.
 </p>
 <pre>
--------------------------------------------------------------------------------
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
 
-<a name="sec2" href="#sec2">2. New Thing Types / Flags</a>
+<a class="l2-header" name="sec2" href="#sec2">2. New Thing Types / Flags</a>
 </pre>
 
 <p>
@@ -154,10 +153,8 @@ There are a couple of new Thing types / flags:</p>
   A. <a href="#sec2a">Friendly monster flag</a>
   B. <a href="#sec2b">Reserved flag</a>
   C. <a href="#sec2c">Dogs</a>
-</pre>
 
-<pre>
-<a name="sec2a" href="#sec2a">2A. Friendly monster flag</a>
+<a class="l3-header" name="sec2a" href="#sec2a">2A. Friendly monster flag</a>
 </pre><p>
 At level startup, every object in a level's map is spawned with the <a href="#sec3a">FRIEND</a>
 mobj flag set if bit 7 (mask 128) is set in the <a href="https://doomwiki.org/wiki/Thing#Flags">Thing's flag bits</a>. This
@@ -175,7 +172,7 @@ considered friendly, regardless of their Thing flags.
 </p>
 
 <pre>
-<a name="sec2b" href="#sec2b">2B. Reserved bit</a>
+<a class="l3-header" name="sec2b" href="#sec2b">2B. Reserved bit</a>
 </pre>
 <p>
 The <a href="https://doomwiki.org/wiki/Thing#Flags">thing flag bit</a> which is 8 positions left of the least significant bit, and
@@ -193,7 +190,7 @@ under these editors, we assume that the wad is strictly a Doom wad, and hence
 none of the flags added to the engine, post-Doom, should be set to '1'.
 </p>
 <pre>
-<a name="sec2c" href="#sec2c">2C. Dogs</a>
+<a class="l3-header" name="sec2c" href="#sec2c">2C. Dogs</a>
 </pre>
 <script language="javascript">
   insertScreenshotFloat("mbf_dogs.png", "helper dogs as they appear in MBF.");
@@ -219,10 +216,9 @@ SFX #   Lump    Description
  111  DSDGACT   Roaming bark
  112  DSDGDTH   Death sound
  113  DSDGPAIN  Pain sound
-</pre>
-<pre>
--------------------------------------------------------------------------------
-<a name="sec3" href="#sec3">3. New Mobj Flags</a>
+
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
+<a class="l2-header" name="sec3" href="#sec3">3. New Mobj Flags</a>
 </pre>
 <p>
 There are three new Map Object (mobj) flags in MBF:
@@ -231,9 +227,8 @@ There are three new Map Object (mobj) flags in MBF:
   A. <a href="#sec3a">FRIEND   (0x40000000)</a>
   B. <a href="#sec3b">BOUNCES  (0x20000000)</a>
   C. <a href="#sec3c">TOUCHY   (0x10000000)</a>
-</pre>
-<pre>
-<a name="sec3a" href="#sec3a">3A. FRIEND  (0x40000000)  Mobj Flag</a>
+
+<a class="l3-header" name="sec3a" href="#sec3a">3A. FRIEND  (0x40000000)  Mobj Flag</a>
 </pre>
 <script language="javascript">
   insertVideoFloat(VIDEO_HOCKEY_WAD, "the FRIEND flag", "3s");
@@ -270,7 +265,7 @@ but does not rule out shooting friends if they are the only ones in sight
 or they are the obvious target.
 </p>
 <pre>
-<a name="sec3b" href="#sec3b">3B. BOUNCES  (0x20000000)  Mobj Flag</a>
+<a class="l3-header" name="sec3b" href="#sec3b">3B. BOUNCES  (0x20000000)  Mobj Flag</a>
 </pre>
 <script language="javascript">
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the BOUNCES flag", "1m55s");
@@ -320,7 +315,7 @@ rolls up and down stairs, if under gravity. This flags combination is
 illustrated in grenade.deh.
 </p>
 <pre>
-<a name="sec3c" href="#sec3c">3C. TOUCHY  (0x10000000)  Mobj Flag</a>
+<a class="l3-header" name="sec3c" href="#sec3c">3C. TOUCHY  (0x10000000)  Mobj Flag</a>
 </pre>
 <script language="javascript">
   insertVideoFloat(VIDEO_MBFEDIT_WAD, "the TOUCHY flag", "1m0s");
@@ -342,9 +337,9 @@ Different players are considered different species, so DM by touch is possible,
 and suicide by touch is possible with voodoo dolls.
 </p>
 <pre>
--------------------------------------------------------------------------------
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
 
-<a name="sec4" href="#sec4">4. DEH/BEX Mnemonic Names</a>
+<a class="l2-header" name="sec4" href="#sec4">4. DEH/BEX Mnemonic Names</a>
 </pre>
 <p>
 FRIEND, BOUNCES, and TOUCHY are allowed as DEH/BEX mnemonics for flags. In MBF,
@@ -360,9 +355,9 @@ the most significant bit. MBF is bug-compatibile with Boom's TRANSLATION
 mnemonic, interpreting TRANSLATION to mean the same as TRANSLATION1.
 </p>
 <pre>
--------------------------------------------------------------------------------
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
 
-<a name="sec5" href="#sec5">5. DEH/BEX Code Pointers</a>
+<a class="l2-header" name="sec5" href="#sec5">5. DEH/BEX Code Pointers</a>
 </pre>
 <p>
 Several new code pointers have been added:
@@ -432,9 +427,9 @@ object, no matter whether they are S1/W1 or SR/WR types.
 used to make countdown timers in grenades.
 </p>
 <pre>
--------------------------------------------------------------------------------
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
 
-<a name="sec6" href="#sec6">6. DEHACKED lump</a>
+<a class="l2-header" name="sec6" href="#sec6">6. DEHACKED lump</a>
 </pre>
 <p>
 The DEHACKED lump allows <a href="https://doomwiki.org/wiki/DeHackEd">.deh</a>/<a href="https://doomwiki.org/wiki/BEX">.bex</a> files to be embedded inside of wads. If 
@@ -461,9 +456,9 @@ Include directives are not allowed inside DEHACKED lumps, since the whole
 purpose of DEHACKED lumps is to be entirely self-contained within a wad.
 </p>
 <pre>
--------------------------------------------------------------------------------
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
 
-<a name="sec7" href="#sec7">7. OPTIONS lump</a>
+<a class="l2-header" name="sec7" href="#sec7">7. OPTIONS lump</a>
 </pre>
 <p>
 The OPTIONS lump allows wads to set game options, such as Doom Compatibility
@@ -498,7 +493,7 @@ options are not necessary for compatibility.
 </p>
 <pre>
 
--------------------------------------------------------------------------------
+<span class="fixed-only">-------------------------------------------------------------------------------</span>
 Lee Killough                                            Last Updated 12/21/1998
 </pre>
 </div>
