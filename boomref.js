@@ -166,21 +166,11 @@ function insertIllustrationFloat(filename, text) {
 	var result = insertBasicFloat("illustration-float", null);
 	var img = document.createElement("img");
 	img.setAttribute("src", "screenshots/" + filename);
-	result.appendChild(img);
-	result.appendChild(document.createTextNode(text));
-	return result;
-}
-
-function insertScreenshotFloat(filename, text) {
-	var result = insertBasicFloat("screenshot-float", null);
-	var thumbnail = document.createElement("img");
-	thumbnail.setAttribute("src", "screenshots/thumb/" + filename);
-	thumbnail.onclick = function() {
+	img.onclick = function() {
 		openScreenshotWindow(filename, text);
 	}
-	result.appendChild(thumbnail);
-	result.appendChild(document.createTextNode(
-		"Click to see a screenshot of " + text));
+	result.appendChild(img);
+	result.appendChild(document.createTextNode(text));
 	return result;
 }
 
@@ -190,4 +180,3 @@ function toggleProportional() {
 	content.setAttribute("proportional", !prop);
 	return true;
 }
-

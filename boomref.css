@@ -60,19 +60,13 @@ pre,tt {
 	width: 480px;
 }
 
-.screenshot-float, .illustration-float {
+.illustration-float {
 	background-color: #ffffcc;
-}
-
-.screenshot-float img {
-	/* Scale to 4:3 aspect ratio */
-	width: 80px;
-	height: 60px;
-	cursor: pointer;
 }
 
 .illustration-float img {
 	width: 100%;
+	cursor: zoom-in;
 }
 
 .screenshot-popup img {
