@@ -162,6 +162,15 @@ function openScreenshotWindow(filename, text) {
 	                          windowContents);
 }
 
+function insertIllustrationFloat(filename, text) {
+	var result = insertBasicFloat("illustration-float", null);
+	var img = document.createElement("img");
+	img.setAttribute("src", "screenshots/" + filename);
+	result.appendChild(img);
+	result.appendChild(document.createTextNode(text));
+	return result;
+}
+
 function insertScreenshotFloat(filename, text) {
 	var result = insertBasicFloat("screenshot-float", null);
 	var thumbnail = document.createElement("img");
