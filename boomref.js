@@ -152,6 +152,13 @@ function insertInfoFloat(text) {
 	return result;
 }
 
+function insertErratumFloat(text) {
+	var result = insertBasicFloat("info-float", "ouchicon.png");
+
+	result.appendChild(document.createTextNode(text));
+	return result;
+}
+
 function openScreenshotWindow(filename, text) {
 	var windowContents = document.createElement("div");
 	var screenshot = document.createElement("img");
