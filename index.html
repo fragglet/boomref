@@ -182,9 +182,9 @@ of help to level authors creating Boom-compatible WAD files.
 
 <span class="fixed-only">======================================================================</span>
                         <a class="l1-header" name="p1" href="#p1">Part I Linedef Types</a>
-<span class="fixed-only">======================================================================</span>
+<span class="fixed-only">======================================================================
 
-<span class="fixed-only">#######################</span>
+#######################</span>
 <a class="l2-header" name="sec0" href="#sec0">Section 0. Terminology</a>
 <span class="fixed-only">#######################</span></pre>
 <p>
@@ -249,10 +249,10 @@ action simultaneously.
 </p>
 <pre>
 
-<span class="fixed-only">################</span>
-<a class="l2-header" name="sec1" href="#sec1">Section 1. Doors</a>
-<span class="fixed-only">################</span>
-</pre>
+<span class="fixed-only">################
+</span><a class="l2-header" name="sec1" href="#sec1">Section 1. Doors</a>
+<span class="fixed-only">################
+</span></pre>
 <p>
 A <a href="https://doomwiki.org/wiki/Door">door</a> is a <a href="https://doomwiki.org/wiki/Sector">sector</a>, usually placed between two rooms, whose ceiling
 raises to open, and lowers to close. 
@@ -286,8 +286,8 @@ height instantly.
 <pre>
 <span class="fixed-only">--------------------------</span>
 <a class="l2-header" name="sec1.1" href="#sec1.1">Section 1.1 Door functions</a>
-<span class="fixed-only">--------------------------</span>
-</pre>
+<span class="fixed-only">--------------------------
+</span></pre>
 <p class="l3-header">
 Open, Wait, Then Close   
 </p>
@@ -317,8 +317,8 @@ opens fully.
 <pre>
 <span class="fixed-only">------------------------------</span>
 <a class="l2-header" name="sec1.2" href="#sec1.2">Section 1.2 Varieties of doors</a>
-<span class="fixed-only">------------------------------</span>
-</pre>
+<span class="fixed-only">------------------------------
+</span></pre>
 <p>
 A door can be triggered by pushing on it, walking over or pressing a
 <a href="https://doomwiki.org/wiki/Linedef">linedef</a> trigger tagged to it, or shooting a linedef tagged to it.
@@ -360,8 +360,8 @@ on the head until it leaves the door sector.
 <pre>
 <span class="fixed-only">------------------------------</span>
 <a class="l2-header" name="sec1.3" href="#sec1.3">Section 1.3 Door linedef types</a>
-<span class="fixed-only">------------------------------</span>
-
+<span class="fixed-only">------------------------------
+</span>
 <span class="l3-header">Regular and Extended Door Types</span>
 <span class="fixed-only">---------------------------------------------------------------</span>
 #        Class   Trig   Lock   Speed    Wait  Monst    Function
@@ -468,12 +468,12 @@ is twice as fast as slow, Fast is twice normal, Turbo is twice Fast.
 
 <span class="fixed-only">#################</span>
 <a class="l2-header" name="sec2" href="#sec2">Section 2. Floors</a>
-<span class="fixed-only">#################</span>
+<span class="fixed-only">#################
 
-<span class="fixed-only">----------------------------</span>
+----------------------------</span>
 <a class="l2-header" name="sec2.1" href="#sec2.1">Section 2.1 Floor targets</a>
-<span class="fixed-only">----------------------------</span>
-</pre>
+<span class="fixed-only">----------------------------
+</span></pre>
 <p class="l3-header">
 Lowest Neighbor Floor (LnF)
 </p>
@@ -580,8 +580,8 @@ texture and/or sector type without moving the floor.
 <pre>
 <span class="fixed-only">--------------------------------</span>
 <a class="l2-header" name="sec2.2" href="#sec2.2">Section 2.2 Varieties of floors</a>
-<span class="fixed-only">--------------------------------</span>
-</pre>
+<span class="fixed-only">--------------------------------
+</span></pre>
 <p>
 A floor can be activated by pushing on a linedef bounding it
 (generalized types only), or by pushing on a switch with the same tag
@@ -634,8 +634,8 @@ position until the obstacle is removed or dies, then continues.
 <pre>
 <span class="fixed-only">-------------------------------</span>
 <a class="l2-header" name="sec2.3" href="#sec2.3">Section 2.3 Floor linedef types</a>
-<span class="fixed-only">-------------------------------</span>
-
+<span class="fixed-only">-------------------------------
+</span>
 <span class="l3-header">Regular and Extended Floor Types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
 #     Class   Trig   Dir Spd   Chg  Mdl Mon Crsh  Target
@@ -750,12 +750,12 @@ TxTy = Texture and Type copied
 
 <span class="fixed-only">####################</span>
 <a class="l2-header" name="sec3" href="#sec3">Section 3. Ceilings</a>
-<span class="fixed-only">####################</span>
+<span class="fixed-only">####################
 
-<span class="fixed-only">----------------------------</span>
+----------------------------</span>
 <a class="l2-header" name="sec3.1" href="#sec3.1">Section 3.1 Ceiling Targets</a>
-<span class="fixed-only">----------------------------</span>
-</pre>
+<span class="fixed-only">----------------------------
+</span></pre>
 <p class="l3-header">
 Highest Neighbor Ceiling (HnC)
 </p>
@@ -841,8 +841,8 @@ texture the motion is to -32000 or +32000 depending on direction.
 <pre>
 <span class="fixed-only">----------------------------------</span>
 <a class="l2-header" name="sec3.2" href="#sec3.2">Section 3.2 Varieties of ceilings</a>
-<span class="fixed-only">----------------------------------</span>
-</pre>
+<span class="fixed-only">----------------------------------
+</span></pre>
 <p>
 A ceiling can be activated by pushing on a <a href="https://doomwiki.org/wiki/Linedef">linedef</a> bounding it
 (generalized types only), or by pushing on a switch with the same tag
@@ -896,8 +896,8 @@ obstacle is removed or dies, then continues.
 <pre>
 <span class="fixed-only">---------------------------------</span>
 <a class="l2-header" name="sec3.3" href="#sec3.3">Section 3.3 Ceiling linedef types</a>
-<span class="fixed-only">---------------------------------</span>
-</pre>
+<span class="fixed-only">---------------------------------
+</span></pre>
 <pre>
 <span class="l3-header">Regular and Extended Ceiling Types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
@@ -955,8 +955,8 @@ TxTy = Texture and Type copied
 
 <span class="fixed-only">############################</span>
 <a class="l2-header" name="sec4" href="#sec4">Section 4. Platforms (Lifts)</a>
-<span class="fixed-only">############################</span>
-</pre>
+<span class="fixed-only">############################
+</span></pre>
 <p>
 A <a href="https://doomwiki.org/wiki/Lift">platform</a> is basically a floor action involving two heights. The
 simple raise platform actions, for example, differ from the
@@ -971,8 +971,8 @@ returns to it former height.
 <pre>
 <span class="fixed-only">-----------------------------</span>
 <a class="l2-header" name="sec4.1" href="#sec4.1">Section 4.1 Platform Targets</a>
-<span class="fixed-only">-----------------------------</span>
-</pre>
+<span class="fixed-only">-----------------------------
+</span></pre>
 <p class="l3-header">
 Lowest Neighbor Floor
 </p>
@@ -1047,8 +1047,8 @@ more.
 <pre>
 <span class="fixed-only">-----------------------------------</span>
 <a class="l2-header" name="sec4.2" href="#sec4.2">Section 4.2 Varieties of Platforms</a>
-<span class="fixed-only">-----------------------------------</span>
-</pre>
+<span class="fixed-only">-----------------------------------
+</span></pre>
 <p>
 A platform can be activated by pushing on a <a href="https://doomwiki.org/wiki/Linedef">linedef</a> bounding it
 (generalized types only), or by pushing on a switch with the same tag
@@ -1082,8 +1082,8 @@ property other than the sector's type.
 <pre>
 <span class="fixed-only">-----------------------------------</span>
 <a class="l2-header" name="sec4.3" href="#sec4.3">Section 4.3 Platform Linedef types</a>
-<span class="fixed-only">-----------------------------------</span>
-
+<span class="fixed-only">-----------------------------------
+</span>
 <span class="l3-header">Regular and Extended Platform Types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
 #     Class  Trig   Dly Spd  Chg  Mdl Mon Target
@@ -1142,8 +1142,8 @@ property other than the sector's type.
 
 <span class="fixed-only">############################</span>
 <a class="l2-header" name="sec5" href="#sec5">Section 5. Crusher Ceilings</a>
-<span class="fixed-only">############################</span>
-</pre>
+<span class="fixed-only">############################
+</span></pre>
 <p>
 A <a href="https://doomwiki.org/wiki/Crushing_ceiling">crusher ceiling</a> is a linedef type that causes the ceiling to cycle
 between its starting height and 8 above the floor, damaging
@@ -1158,8 +1158,8 @@ No other ceiling action can be used in that <a href="https://doomwiki.org/wiki/S
 <pre>
 <span class="fixed-only">----------------------------------</span>
 <a class="l2-header" name="sec5.1" href="#sec5.1">Section 5.1 Varieties of Crushers</a>
-<span class="fixed-only">----------------------------------</span>
-</pre>
+<span class="fixed-only">----------------------------------
+</span></pre>
 <p>
 A crusher can be activated by pushing on a linedef bounding it
 (generalized types only), or by pushing on a switch with the same tag
@@ -1189,8 +1189,8 @@ can be restarted, but not changed, with any crusher linedef.
 <pre>
 <span class="fixed-only">----------------------------------</span>
 <a class="l2-header" name="sec5.2" href="#sec5.2">Section 5.2 Crusher Linedef Types</a>
-<span class="fixed-only">----------------------------------</span>
-
+<span class="fixed-only">----------------------------------
+</span>
 <span class="l3-header">Regular and Extended Crusher Types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
 #     Class  Trig   Spd  Mon Silent Action
@@ -1229,8 +1229,8 @@ can be restarted, but not changed, with any crusher linedef.
 
 <span class="fixed-only">##########################</span>
 <a class="l2-header" name="sec6" href="#sec6">Section 6. Stair Builders</a>
-<span class="fixed-only">##########################</span>
-</pre>
+<span class="fixed-only">##########################
+</span></pre>
 <p>
 A <a href="https://doomwiki.org/wiki/Linedef_type#Stair_builders">stair builder</a> is a <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> that sets a sequence of <a href="https://doomwiki.org/wiki/Sector">sectors</a>
 defined by a complex rule to an ascending or descending sequence of
@@ -1266,8 +1266,8 @@ at stair build speed, otherwise it is instant.
 <pre>
 <span class="fixed-only">----------------------------------------</span>
 <a class="l2-header" name="sec6.1" href="#sec6.1">Section 6.1 Varieties of Stair Builders</a>
-<span class="fixed-only">----------------------------------------</span>
-</pre>
+<span class="fixed-only">----------------------------------------
+</span></pre>
 <p>
 A stair can be activated by pushing on a <a href="https://doomwiki.org/wiki/Linedef">linedef</a> bounding it
 (generalized types only), or by pushing on a switch with the same tag
@@ -1305,8 +1305,8 @@ crush.
 <pre>
 <span class="fixed-only">----------------------------------------------------</span>
 <a class="l2-header" name="sec6.2" href="#sec6.2">Section 6.2 Regular and Extended Stair Builder Types</a>
-<span class="fixed-only">----------------------------------------------------</span>
-
+<span class="fixed-only">----------------------------------------------------
+</span>
 <span class="l3-header">Regular and Extended Stairs Types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
 #     Class  Trig  Dir Spd   Step Ignore Mon
@@ -1336,8 +1336,8 @@ crush.
 
 <span class="fixed-only">####################</span>
 <a class="l2-header" name="sec7" href="#sec7">Section 7 Elevators</a>
-<span class="fixed-only">####################</span>
-</pre>
+<span class="fixed-only">####################
+</span></pre>
 <p>
 An <a href="https://doomwiki.org/wiki/Elevator">elevator</a> is a <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> that moves both floor and ceiling
 together. All elevator <a href="https://doomwiki.org/wiki/Linedef">linedefs</a> are extended, there are no regular or
@@ -1348,8 +1348,8 @@ either switched or walkover.
 <pre>
 <span class="fixed-only">-----------------------------</span>
 <a class="l2-header" name="sec7.1" href="#sec7.1">Section 7.1 Elevator Targets</a>
-<span class="fixed-only">-----------------------------</span>
-</pre>
+<span class="fixed-only">-----------------------------
+</span></pre>
 <p class="l3-header">
 Next Highest Floor
 </p>
@@ -1403,8 +1403,8 @@ above the elevator floor.
 
 <span class="fixed-only">###################</span>
 <a class="l2-header" name="sec7x" href="#sec7x">Section 7 Lighting</a>
-<span class="fixed-only">###################</span>
-</pre>
+<span class="fixed-only">###################
+</span></pre>
 <p>
 The lighting <a href="https://doomwiki.org/wiki/Linedef_type">linedef types</a> change the lighting in the tagged <a href="https://doomwiki.org/wiki/Sector">sector</a>.
 All are regular or extended types, there are no generalized lighting
@@ -1413,8 +1413,8 @@ types. All are switched or walkovers.
 <pre>
 <span class="fixed-only">-----------------------------</span>
 <a class="l2-header" name="sec7x.1" href="#sec7x.1">Section 7.1 Lighting Targets</a>
-<span class="fixed-only">-----------------------------</span>
-</pre>
+<span class="fixed-only">-----------------------------
+</span></pre>
 <p class="l3-header">
 Lights to Minimum Neighbor
 </p>
@@ -1458,8 +1458,8 @@ Each tagged sector is set to a light level of 255 units.
 <pre>
 <span class="fixed-only">-----------------------------------</span>
 <a class="l2-header" name="sec7x.2" href="#sec7x.2">Section 7.2 Lighting Linedef Types</a>
-<span class="fixed-only">-----------------------------------</span>
-
+<span class="fixed-only">-----------------------------------
+</span>
 <span class="l3-header">Regular and Extended Lighting types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
 #     Class  Trig  Target
@@ -1493,8 +1493,8 @@ Each tagged sector is set to a light level of 255 units.
 
 <span class="fixed-only">################</span>
 <a class="l2-header" name="sec8" href="#sec8">Section 8 Exits</a>
-<span class="fixed-only">################</span>
-</pre>
+<span class="fixed-only">################
+</span></pre>
 <p>
 An exit <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> ends the current level bringing up the
 intermission screen with its report of kills/items/secrets or frags
@@ -1504,8 +1504,8 @@ none require tags, since no <a href="https://doomwiki.org/wiki/Sector">sector</a
 <pre>
 <span class="fixed-only">---------------------------</span>
 <a class="l2-header" name="sec8.1" href="#sec8.1">Section 8.1 Exit Varieties</a>
-<span class="fixed-only">---------------------------</span>
-</pre>
+<span class="fixed-only">---------------------------
+</span></pre>
 <p>
 An exit can be activated by pushing on a switch with the exit type
 or  by walking over a <a href="https://doomwiki.org/wiki/Linedef">linedef</a> with the exit type, or by shooting a 
@@ -1528,8 +1528,8 @@ In DOOM II a normal exit from 31 or 32 goes to level 16.
 <pre>
 <span class="fixed-only">-----------------------------------</span>
 <a class="l2-header" name="sec8.2" href="#sec8.2">Section 8.2 Exit Linedef Types</a>
-<span class="fixed-only">-----------------------------------</span>
-
+<span class="fixed-only">-----------------------------------
+</span>
 <span class="l3-header">Regular and Extended Exit types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
 #     Class  Trig  Type
@@ -1544,8 +1544,8 @@ In DOOM II a normal exit from 31 or 32 goes to level 16.
 
 <span class="fixed-only">######################</span>
 <a class="l2-header" name="sec9" href="#sec9">Section 9 Teleporters</a>
-<span class="fixed-only">######################</span>
-</pre>
+<span class="fixed-only">######################
+</span></pre>
 <p>
 A <a href="https://doomwiki.org/wiki/Teleporter">teleporter</a> is a linedef that when crossed or switched makes the
 player or monster appear elsewhere in the level. There are only
@@ -1590,8 +1590,8 @@ occupying the spot dies messily, and this is called a telefrag.
 <pre>
 <span class="fixed-only">-------------------------------</span>
 <a class="l2-header" name="sec9.1" href="#sec9.1">Section 9.1 Teleport Varieties</a>
-<span class="fixed-only">-------------------------------</span>
-</pre>
+<span class="fixed-only">-------------------------------
+</span></pre>
 <script language="javascript">
   insertVideoFloat(VIDEO_BOOMEDIT_WAD, "switch activated teleporters",
                    "4m54s");
@@ -1621,8 +1621,8 @@ monsters.
 <pre>
 <span class="fixed-only">-----------------------------------</span>
 <a class="l2-header" name="sec9.2" href="#sec9.2">Section 9.2 Teleport Linedef types</a>
-<span class="fixed-only">-----------------------------------</span>
-
+<span class="fixed-only">-----------------------------------
+</span>
 <span class="l3-header">Regular and Extended Teleport types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
 #     Class  Trig  Silent Mon Plyr Orient    Dest
@@ -1654,8 +1654,8 @@ monsters.
 
 <span class="fixed-only">##################</span>
 <a class="l2-header" name="sec10" href="#sec10">Section 10 Donuts</a>
-<span class="fixed-only">##################</span>
-</pre>
+<span class="fixed-only">##################
+</span></pre>
 <p>
 A donut is a very specialized <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> that lowers a pillar in a
 surrounding pool, while raising the pool and changing its texture and
@@ -1677,8 +1677,8 @@ walkover.
 <pre>
 <span class="fixed-only">---------------------------------</span>
 <a class="l2-header" name="sec10.1" href="#sec10.1">Section 10.1 Donut Linedef types</a>
-<span class="fixed-only">---------------------------------</span>
-</pre>
+<span class="fixed-only">---------------------------------
+</span></pre>
 <pre>
 <span class="l3-header">Regular and Extended Donut types</span>
 <span class="fixed-only">-------------------------------------------------------------------</span>
@@ -1691,8 +1691,8 @@ walkover.
 
 <span class="fixed-only">#############################</span>
 <a class="l2-header" name="sec11" href="#sec11">Section 11 Property Transfer</a>
-<span class="fixed-only">#############################</span>
-</pre>
+<span class="fixed-only">#############################
+</span></pre>
 <p>
 These <a href="https://doomwiki.org/wiki/Linedef_type">linedefs</a> are special purpose and are used to transfer
 properties from the linedef itself or the <a href="https://doomwiki.org/wiki/Sector">sector</a> on its first <a href="https://doomwiki.org/wiki/Sidedef">sidedef</a> 
@@ -1960,8 +1960,8 @@ else the results are undefined.
 <pre>
 
 <span class="l3-header">Constant pushers</span>
-<span class="fixed-only">----------------</span>
-</pre>
+<span class="fixed-only">----------------
+</span></pre>
 <p>Two types of constant pushers are available, wind and current. Depending
 on whether you are above, on, or below (special water sectors) the ground
 level, the amount of force varies.
@@ -2029,9 +2029,9 @@ pushers.
 
 <span class="fixed-only">###########################################</span>
 <a class="l2-header" name="sec12" href="#sec12">Section 12 Scrolling Walls, Flats, Objects</a>
-<span class="fixed-only">###########################################</span></pre>
-<pre>
+<span class="fixed-only">###########################################
 
+</span>
 <a class="l3-header" name="sec12-static" href="#sec12-static">Static Scrollers</a>
 </pre>
 <script language="javascript">
@@ -2317,13 +2317,13 @@ change times the trigger length, divided by 32.
 </p>
 <pre>
 
-<span class="fixed-only">======================================================================</span>
+<span class="fixed-only">======================================================================
 
-<span class="fixed-only">#######################################################</span>
+#######################################################</span>
 <a class="l2-header" name="sec13" href="#sec13">Section 13 Detailed Generalized Linedef Specification</a>
-<span class="fixed-only">#######################################################</span>
+<span class="fixed-only">#######################################################
 
-</pre>
+</span></pre>
 <p>
 BOOM has added generalized <a href="https://doomwiki.org/wiki/Linedef_type">linedef types</a> that permit the parameters
 of linedef actions to be nearly independently chosen. 
@@ -2717,8 +2717,8 @@ Notes:
 
 <span class="fixed-only">======================================================================</span>
                         <a class="l2-header" name="p2" href="#p2">Part II Sector Types</a>
-<span class="fixed-only">======================================================================</span>
-</pre>
+<span class="fixed-only">======================================================================
+</span></pre>
 <p>
 BOOM is backward compatible with DOOM's <a href="https://doomwiki.org/wiki/Sector_type">sector types</a>. All types 0-17
 have the same meaning they did under DOOM. Types 18-31 are reserved
@@ -2729,8 +2729,8 @@ extended sector types are implemented at this time.
 <pre>
 <span class="fixed-only">####################################</span>
 <a class="l2-header" name="sec14" href="#sec14">Section 14. Regular Sector types</a>
-<span class="fixed-only">####################################</span>
-</pre>
+<span class="fixed-only">####################################
+</span></pre>
 <p>
 From Matt Fell's <a href="https://doomwiki.org/wiki/Unofficial_Doom_Specs">Unofficial DOOM Spec</a> the DOOM sector types are:
 </p>
@@ -2842,8 +2842,8 @@ by the sector.
 <pre>
 <span class="fixed-only">======================================================================</span>
                         <a class="l2-header" name="p3" href="#p3">Part III Linedef Flags</a>
-<span class="fixed-only">======================================================================</span>
-</pre>
+<span class="fixed-only">======================================================================
+</span></pre>
 <script language="javascript">
   insertVideoFloat(VIDEO_BOOMEDIT_WAD, "the PassThru flag", "3m6s");
 </script>
@@ -2861,8 +2861,8 @@ The new linedef flag is bit 9, value 512, in the linedef flags word.
 <pre>
 <span class="fixed-only">======================================================================</span>
                         <a class="l2-header" name="p4" href="#p4">Part IV Thing Flags</a>
-<span class="fixed-only">======================================================================</span>
-</pre>
+<span class="fixed-only">======================================================================
+</span></pre>
 <p>
 BOOM has implemented two new <a href="https://doomwiki.org/wiki/Thing_flag">thing flags</a>, "not in <a href="https://doomwiki.org/wiki/Deathmatch">DM</a>" and "not in
 <a href="https://doomwiki.org/wiki/Cooperative">COOP</a>", which in combination with the existing "not in Single" flag,
@@ -2881,8 +2881,8 @@ similar.
 <pre>
 <span class="fixed-only">======================================================================</span>
                         <a class="l2-header" name="p5" href="#p5">Part V Thing Types</a>
-<span class="fixed-only">======================================================================</span>
-</pre>
+<span class="fixed-only">======================================================================
+</span></pre>
 <p>
 BOOM has implemented two new thing types as well, MT_PUSH (5001), and
 MT_PULL(5002). These control the origin of the point source wind
@@ -2893,8 +2893,8 @@ used.
 <pre>
 <span class="fixed-only">======================================================================</span>
                         <a class="l2-header" name="p6" href="#p6">Part VI BOOM Predefined Lumps</a>
-<span class="fixed-only">======================================================================</span>
-</pre>
+<span class="fixed-only">======================================================================
+</span></pre>
 <p>
 BOOM supports resources embedded in the .EXE that are loaded before
 all other resources. They can be replaced by resources of the same
