@@ -1,10 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Varta|Source+Code+Pro&display=block");
+
 body {
 	margin-left: 50px;
+	font-family: 'Varta', 'Helvetica', 'Arial', sans-serif;
+	font-size: 15px;
 }
 
 /* Anchor tags are not links as such, so make them more subtle. */
 a[name] {
 	color: black;
+}
+
+pre,tt {
+	font-family: 'Source Code Pro', monospace;
+	font-size: 11px;
 }
 
 .side-float {
@@ -75,7 +84,8 @@ a[name] {
 
 #content p {
 	white-space: pre;
-	font-family: monospace;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 11px;
 	margin: 0;
 }
 
@@ -87,7 +97,8 @@ a[name] {
 #content[proportional="true"] p {
 	display: block;
 	white-space: normal;
-	font-family: serif;
+	font-family: 'Varta', 'Helvetica', 'Arial', sans-serif;
+	font-size: 13px;
 	text-align: justify;
 	width: 36em;
 	margin-top: 1em;
