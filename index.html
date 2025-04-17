@@ -256,6 +256,7 @@ action simultaneously.
 <script language="javascript">
   insertIllustrationFloat("door.png",
                           "The first door encountered in E1M1.");
+  insertWikiFloat("Door", "doors");
 </script>
 <p>
 A <a href="https://doomwiki.org/wiki/Door">door</a> is a <a href="https://doomwiki.org/wiki/Sector">sector</a>, usually placed between two rooms, whose ceiling
@@ -976,6 +977,7 @@ TxTy = Texture and Type copied
                           "Example of a moving lift from E1M4.");
   insertInfoFloat("Boom also introduces \"Elevators\", which move both "+
                   "floor and ceiling together (Section 7 below).");
+  insertWikiFloat("Lift", "lifts");
 </script>
 <p>
 A <a href="https://doomwiki.org/wiki/Lift">platform</a> is basically a floor action involving two heights. The
@@ -1169,6 +1171,7 @@ property other than the sector's type.
                           "Imp being squashed by a crushing ceiling on E2M4.");
   insertErratumFloat("\"Crusher\" ceilings are usually referred to as "+
                      "\"crushing\" ceilings, including in the Doom manual.");
+  insertWikiFloat("Crushing ceiling", "crushing ceilings");
 </script>
 <p>
 A <a href="https://doomwiki.org/wiki/Crushing_ceiling">crusher ceiling</a> is a linedef type that causes the ceiling to cycle
@@ -1257,6 +1260,9 @@ can be restarted, but not changed, with any crusher linedef.
 <a class="l2-header" name="sec6" href="#sec6">Section 6. Stair Builders</a>
 <span class="fixed-only">##########################
 </span></pre>
+<script language="javascript">
+  insertWikiFloat("Stair builder", "stair builders");
+</script>
 <p>
 A <a href="https://doomwiki.org/wiki/Linedef_type#Stair_builders">stair builder</a> is a <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> that sets a sequence of <a href="https://doomwiki.org/wiki/Sector">sectors</a>
 defined by a complex rule to an ascending or descending sequence of
@@ -1369,6 +1375,7 @@ crush.
                   "and are move both floor and ceiling together. This is "+
                   "compared to \"Platforms\" (Section 5 above), the type "+
                   "found in vanilla Doom which are just moving floors.");
+  insertWikiFloat("Elevator", "elevators");
 </script>
 <p>
 An <a href="https://doomwiki.org/wiki/Elevator">elevator</a> is a <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> that moves both floor and ceiling
@@ -1440,6 +1447,7 @@ above the elevator floor.
 <script language="javascript">
   insertErratumFloat("There are two Section 7s. This is a mistake in the "+
                      "original document and has not been corrected here.");
+  insertWikiFloat("Lighting effects", "lighting effects");
 </script>
 <p>
 The lighting <a href="https://doomwiki.org/wiki/Linedef_type">linedef types</a> change the lighting in the tagged <a href="https://doomwiki.org/wiki/Sector">sector</a>.
@@ -1533,6 +1541,7 @@ Each tagged sector is set to a light level of 255 units.
 </span></pre>
 <script language="javascript">
   insertIllustrationFloat("exit-switch.png", "Exit switch at the end of E2M1.");
+  insertWikiFloat("Exit", "exits");
 </script>
 <p>
 An exit <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> ends the current level bringing up the
@@ -1587,6 +1596,7 @@ In DOOM II a normal exit from 31 or 32 goes to level 16.
 </span></pre>
 <script language="javascript">
   insertIllustrationFloat("teleporter.png", "Teleporter at the start of E2M1.");
+  insertWikiFloat("Teleporter", "teleporters");
 </script>
 <p>
 A <a href="https://doomwiki.org/wiki/Teleporter">teleporter</a> is a linedef that when crossed or switched makes the
@@ -1704,6 +1714,7 @@ monsters.
                           "the switch in the distance raises (drains) the "+
                           "pool and simultaneously lowers the pillar "+
                           "with the chaingun.");
+  insertWikiFloat("Donut", "donut specials");
 </script>
 <p>
 A donut is a very specialized <a href="https://doomwiki.org/wiki/Linedef_type">linedef type</a> that lowers a pillar in a
@@ -1789,6 +1800,7 @@ valid texture name, and will be displayed as such on this linedef.
   insertInfoFloat("The main use of linedef 242 is to create deep water "+
                   "sectors, but it has other uses such as invisible floors.");
   insertVideoFloat(VIDEO_BOOMEDIT_WAD, "type 242 property transfer", "1m40s");
+  insertWikiFloat("Deep water", "deep water effects");
 </script>
 <p>
 This allows the tagged sector to have two levels -- an actual floor and 
@@ -1834,6 +1846,7 @@ The viewer's xyz coordinates uniquely determine which space they are in.
                           "Partially \"submerged\" objects are clipped "+
                           "properly against the floor by Boom, as seen "+
                           "here.");
+  insertWikiFloat("COLORMAP", "colormaps")
 </script>
 <p>
 If they are in space B (normal space), then the floor and ceiling textures
@@ -2093,6 +2106,7 @@ pushers.
 </pre>
 <script language="javascript">
   insertVideoFloat(VIDEO_BOOMEDIT_WAD, "static scrollers", "0m0s");
+  insertWikiFloat("Scroller", "scrollers");
 </script>
 <p>
 The most basic kind of scrolling linedef causes some part of the tagged
@@ -2780,6 +2794,9 @@ Notes:
                         <a class="l2-header" name="p2" href="#p2">Part II Sector Types</a>
 <span class="fixed-only">======================================================================
 </span></pre>
+<script language="javascript">
+  insertWikiFloat("Sector type", "sector types");
+</script>
 <p>
 BOOM is backward compatible with DOOM's <a href="https://doomwiki.org/wiki/Sector_type">sector types</a>. All types 0-17
 have the same meaning they did under DOOM. Types 18-31 are reserved
@@ -2907,6 +2924,7 @@ by the sector.
 </span></pre>
 <script language="javascript">
   insertVideoFloat(VIDEO_BOOMEDIT_WAD, "the PassThru flag", "3m6s");
+  insertWikiFloat("Linedef flag", "linedef flags");
 </script>
 <p>
 Only one new <a href="https://doomwiki.org/wiki/Linedef_flag">linedef flag</a> is implemented, called PassThru, which
@@ -3084,6 +3102,8 @@ STBAR          status bar background
 DSGETPOW       sound for obtaining power-up</pre>
 <script language="javascript">
   insertIllustrationFloat("endboom.png", "The ENDBOOM screen.");
+  insertWikiFloat("SWITCHES", "the SWITCHES lump");
+  insertWikiFloat("ANIMATED", "the ANIMATED lump");
 </script>
 <pre>
 <span class="l3-header">Text end screen</span>

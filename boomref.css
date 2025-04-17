@@ -48,6 +48,15 @@ pre,tt {
 	margin-bottom: 20px;
 }
 
+.wiki-float {
+	background-color: lightgreen;
+}
+
+.wiki-float img {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .calc-float {
 	background-color: lightblue;
 }

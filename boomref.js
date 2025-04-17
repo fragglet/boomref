@@ -159,6 +159,23 @@ function insertErratumFloat(text) {
 	return result;
 }
 
+function insertWikiFloat(pagename, text) {
+	var result = insertBasicFloat("wiki-float", "wikiicon.png");
+
+	result.appendChild(document.createElement("div"));
+	result.appendChild(document.createTextNode(
+		"The Doom Wiki has an article on "));
+
+	var link = document.createElement("a");
+	link.setAttribute("href",
+		"https://doomwiki.org/wiki/" + pagename.replaceAll(" ", "_"))
+	link.appendChild(document.createTextNode(text));
+	result.appendChild(link);
+	result.appendChild(document.createTextNode("."));
+
+	return result;
+}
+
 function openScreenshotWindow(filename, text) {
 	var windowContents = document.createElement("div");
 	var screenshot = document.createElement("img");
