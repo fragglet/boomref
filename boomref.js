@@ -37,6 +37,11 @@ VIDEO_HOCKEY_WAD = {
 	videoId: "VyqVMGDZ0Ls",
 }
 
+VIDEO_EVIL_DOG = {
+	title: "MBF: Helper Dog turns evil",
+	videoId: "4Vod7zxWP6Q",
+}
+
 var numSideFloats = 0;
 
 function insertBasicFloat(floatClass, iconPath) {
