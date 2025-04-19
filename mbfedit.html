@@ -155,7 +155,11 @@ There are a couple of new Thing types / flags:</p>
   C. <a href="#sec2c">Dogs</a>
 
 <a class="l3-header" name="sec2a" href="#sec2a">2A. Friendly monster flag</a>
-</pre><p>
+</pre>
+<script language="javascript">
+  insertWikiFloat("Friendly monster", "friendly monsters");
+</script>
+<p>
 At level startup, every object in a level's map is spawned with the <a href="#sec3a">FRIEND</a>
 mobj flag set if bit 7 (mask 128) is set in the <a href="https://doomwiki.org/wiki/Thing#Flags">Thing's flag bits</a>. This
 allows two of the same species in a map to be marked as being of a different
@@ -194,6 +198,7 @@ none of the flags added to the engine, post-Doom, should be set to '1'.
 </pre>
 <script language="javascript">
   insertIllustrationFloat("mbf_dogs.png", "Helper dogs as they appear in MBF.");
+  insertWikiFloat("Helper dog", "helper dogs");
 </script>
 <p>
 Dogs, which are mobj #140, have Doomednum 888 (i.e. Thing Type #888). They
